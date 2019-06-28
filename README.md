@@ -1,3 +1,3 @@
 title: Testy Title
 
-<a href="telethryl.github.io/profiles/home.html">link</a>
+<a href="profiles/magicalsquad.html">link</a>
