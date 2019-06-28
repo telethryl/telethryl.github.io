@@ -1,1 +1,1506 @@
-<p>Hello world</p>
+ <!doctype html>
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+   
+       
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+ 
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ 
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300italic,300,400italic,700,700italic|Montserrat:400,700|Cabin:700' rel='stylesheet' type='text/css'>
+
+
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+ 
+<script>
+ 
+$(document).ready(function() {
+    var $container = $('.container').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: 360
+        }
+    });
+    $('.name').click(function(){
+        // change size of item by toggling gigante class
+        $(this).closest('.grid-item').toggleClass('fullsize');
+        $container.isotope('layout');
+    });
+     $('.name').click(function(){
+    $(this).toggleClass('close');
+});
+ 
+});
+</script>
+ 
+<script type="text/javascript">
+$(document).ready( function() {
+ // init Isotope
+ var $grid = $('.grid').isotope({
+   itemSelector: '.grid-item'
+ });
+ 
+ // store filter for each group
+ var filters = {};
+ 
+ $('.filters').on( 'click', '.button', function() {
+   var $this = $(this);
+   // get group key
+   var $buttonGroup = $this.parents('.button-group');
+   var filterGroup = $buttonGroup.attr('data-filter-group');
+   // set filter for group
+   filters[ filterGroup ] = $this.attr('data-filter');
+   // combine filters
+   var filterValue = concatValues( filters );
+   // set filter for Isotope
+   $grid.isotope({ filter: filterValue });
+ });
+ 
+ // change is-checked class on buttons
+ $('.button-group').each( function( i, buttonGroup ) {
+   var $buttonGroup = $( buttonGroup );
+   $buttonGroup.on( 'click', 'button', function() {
+     $buttonGroup.find('.is-checked').removeClass('is-checked');
+     $( this ).addClass('is-checked');
+   });
+ });
+ 
+});
+ 
+// layout Isotope after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.isotope('layout');
+});
+ 
+// flatten object by concatting values
+function concatValues( obj ) {
+ var value = '';
+ for ( var prop in obj ) {
+   value += obj[ prop ];
+ }
+ return value;
+}
+ 
+</script>
+ 
+ 
+<script>
+$(document).ready(function(){
+    $(".showfilters").click(function(){
+        $(".topfilters").toggle();
+    });
+});
+</script>
+ 
+ 
+ 
+    </head>
+   
+    <style>
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-backface-visibility: hidden;
+}
+ 
+::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 12px;
+    background-color: #fff;
+}
+ 
+.grid-item ::-webkit-scrollbar-thumb {
+    border: none;
+    -webkit-border-radius: 3px;
+    background-color: #222 !important;
+}
+ 
+body,html {
+    height: 100%;
+}
+ 
+body {
+    background-color: #000;
+    background-image: url(http://i68.tinypic.com/2qbd9jq.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    font-family: 'Roboto',sans-serif;
+}
+ 
+a {
+    color: #73CEC9;
+    text-decoration: none;
+}
+
+i {
+    font-style:italic;
+    font-weight:bold;
+    color:#7a9cb8;
+    text-shadow:1px 2px 5px #000000;
+
+}
+
+b {
+    font-weight:bold;
+    color:#000000;
+    text-shadow:1px 2px 7px #fff;
+}
+ 
+.container {
+    margin: auto;
+    margin-bottom: 50px;
+    max-width: 1082px;
+    height: 100%;
+}
+ 
+.container:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+ 
+.grid-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px;
+    width: 340px;
+    height: 240px;
+    background: rgba(0, 0, 0, .75);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+ 
+.grid-item img {
+    width: 100%;
+}
+ 
+.grid-item.fullsize {
+    width: 700px;
+    height: auto;
+}
+ 
+.grid-item.fullsize > .intro img {
+    display: none;
+}
+ 
+.name,h1,h2,h3,#title {
+    font-weight: 400;
+}
+ 
+.name {
+    position: absolute;
+    bottom: 0;
+    z-index: 99999999;
+    display: inline-block;
+    overflow: hidden;
+    padding: 6px 8px;
+    width: 320px;
+    font-weight:bold;
+    outline: rgba(0,0,0,0.3) solid 1px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+ 
+.name:hover{
+    padding-top: 185px;
+    width: 320px;
+    outline: #fff solid 1px;
+    background: rgba(0,0,0,0.0);
+}
+ 
+ 
+ 
+.name:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 5px;
+    content: "+";
+    font-weight: 100;
+}
+ 
+.fullsize .name:after {
+    content: "";
+}
+ 
+.expand {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100%;
+}
+ 
+.etc,#desc {
+    font-weight: 300;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgb(255,255,255);
+}
+ 
+.intro {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+ 
+#nav,.links a,button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-size: 10px;
+}
+ 
+#nav a:after {
+    content: " |";
+}
+ 
+.links a:after {
+    background: #000;
+    color: #fff;
+}
+ 
+#nav a:last-of-type:after,.links a:last-of-type:after {
+    content: "";
+}
+ 
+.links a {
+    display: inline-block;
+    margin-right: 2px;
+    padding: 2px 0;
+    border-bottom: 1px solid #222;
+    color: #fff;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+ 
+.links a:before {
+    margin-right: 3px;
+    content: "\f105";
+    font-weight: 100;
+}
+ 
+.links a:hover {
+    background: #73CEC9;
+    color: #000;
+}
+ 
+.linkgroup {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 200px;
+    vertical-align: top;
+}
+ 
+.fullsize .close {
+    outline: none;
+}
+ 
+.close, .close:hover {
+   position: absolute;
+    top: 7px;
+    right: 15px;
+    display: block !important;
+    overflow: hidden;
+    margin: 0!important;
+    padding: 0!important;
+    width: 30px;
+    height: 25px;
+    border: none;
+    outline: none;
+    text-align: right;
+    text-shadow: none;
+    background: transparent;
+}
+ 
+.close:before {
+    color: #fff;
+    content: "\f404       ";
+    font-size: 23px;
+    font-family: IonIcons;
+}
+ 
+.header {
+    margin: 20px;
+    width: 660px;
+}
+ 
+.bio {
+    overflow: auto;
+    padding: 0 15px 20px 20px;
+    padding-top: 0;
+    max-height: 250px;
+    width: 680px;
+    text-align: justify;
+    -webkit-mask-image: -webkit-gradient(linear,center 90%,center bottom,from(rgba(0,0,0,20)),to(rgba(20,0,0,0)));
+}
+ 
+.topbar {
+    position: relative;
+    overflow: auto;
+    margin: 40px auto 10px;
+    width: 1065px;
+    height: 115px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    opacity: .7;
+}
+ 
+#title {
+    padding-top: 25px;
+    font-size: 37px;
+    color:#fff;
+    text-shadow: 2px 2px #000;
+    font-family: 'Great Vibes';
+}
+ 
+h1 {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #fff;
+    text-align: left;
+    font-size: 28px;
+    font-family: 'Great Vibes';
+    letter-spacing:1px;
+}
+ 
+h2 {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+    font-family: 'Great Vibes';
+}
+ 
+h2 span {
+    font-weight: 100;
+    font-size: 12px;
+    font-family: 'Roboto',sans-serif;
+}
+ 
+h3 {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    padding-right: 10px;
+    border-right: 1px solid #fff;
+    font-size: 12px;
+}
+ 
+p {
+    padding: 5px 0;
+}
+ 
+.box {
+    position: relative;
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #fff;
+}
+ 
+.feed {
+    display: inline-block;
+    overflow: auto;
+    max-height: 400px;
+    width: 340px;
+    vertical-align: top;
+}
+ 
+.feed li {
+    margin-right: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+    list-style: none;
+}
+ 
+.feed li:last-of-type {
+    border-bottom: none;
+}
+ 
+.feed li i {
+    color: #B0B0B0;
+    font-style: normal;
+}
+ 
+.feed span {
+    color: #73CEC9;
+}
+ 
+.twitterinfo {
+    display: inline-block;
+    margin-right: 35px;
+    width: 235px;
+}
+ 
+.twitterinfo img {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+}
+ 
+.twitterinfo span,.twitterinfo b {
+    display: block;
+}
+ 
+.twitterinfo b {
+    font-size: 15px;
+}
+ 
+.what {
+    display: none;
+}
+ 
+.what:before,.location:before,.joined:before,.born:before {
+    display: inline-block;
+    margin-right: 3px;
+    width: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "FontAwesome";
+}
+ 
+.what:before {
+    content: '\f0ac';
+}
+ 
+.location:before {
+    content: '\f041';
+}
+ 
+.joined:before {
+    content: '\f017';
+}
+ 
+.born:before {
+    content: '\f1fd';
+}
+ 
+.instagram {
+    padding: 0;
+    padding-top: 25px;
+    border: none;
+    text-align: justify;
+}
+ 
+.instagram:after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+}
+ 
+.instagram img {
+    display: inline-block;
+    margin: 7px 0;
+    width: 210px;
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+ 
+.instagram:hover img {
+    -webkit-filter: grayscale(0%);
+}
+ 
+.stats {
+    list-style: none;
+}
+ 
+.topfilters {
+    position: absolute;
+    bottom: 0;
+    z-index: 9999999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+ 
+.filters {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    width: 1065px;
+}
+ 
+ 
+button {
+    display: inline-block;
+    margin-right: 4px;
+    padding: 2px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #222;
+    background: transparent;
+    color: #b0b0b0;
+    text-align: left;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+ 
+.button:active,.button.is-checked {
+    color: #73CEC9;
+}
+ 
+.button-group {
+    display: inline-block;
+    margin: 0 7px 7px 0;
+}
+ 
+iframe {
+    display: none;
+}
+ 
+.tmblr-iframe.tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop {
+    display: none;
+}
+ 
+ 
+    </style>
+   
+<body>
+ 
+ 
+ 
+<div class="topbar">
+ 
+<div id="title">The Bat Pack <i style="color:#79d7fc;">#squadgoals</i></div>
+ 
+<div class="topfilters">
+<div class="filters">
+ 
+    <!-- category one --->
+    <div class="button-group" data-filter-group="division">
+        <h2>DIVISION</h2>
+        <button class="button is-checked" data-filter="">all</button>
+        <button class="button" data-filter=".une">une</button>
+        <button class="button" data-filter=".deux">deux</button>
+        <button class="button" data-filter=".trois">trois</button>
+        <button class="button" data-filter=".quatre">quatre</button>
+    </div>
+   
+    <!-- category two --->
+    <div class="button-group" data-filter-group="availability">
+        <h2>AVALIABILITY</h2>
+        <button class="button is-checked" data-filter="">all</button>
+        <button class="button" data-filter=".open">open</button>
+        <button class="button" data-filter=".taken">taken</button>
+    </div>
+   
+    <!-- category three --->
+    <div class="button-group" data-filter-group="type">
+        <h2>CHARACTER TYPE</h2>
+        <button class="button is-checked" data-filter="">all</button>
+        <button class="button" data-filter=".cc">canon character </button>
+        <button class="button" data-filter=".oc">original character</button>
+        <button class="button" data-filter=".wanted">most wanted</button>
+    </div>
+   
+    <p>
+    <button><a href="#" class="showfilters">hide filters</a></button>
+   
+</div>
+</div>
+    <div id="nav">
+        <a href="/">home</a>
+        <a href="#" class="showfilters">show filters</a>
+        <a href="https://hailthehelpful.tumblr.com">credit</a>
+    </div>
+</div>  
+ 
+<!-----------------------------BEGIN GRID----------------------------->
+ 
+<div class="grid container">
+
+
+ 
+<!--------------------------BEGIN REZ-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="http://i67.tinypic.com/2zoj7kk.png"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Rez
+        <div class="etc">Subtitle
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="http://i65.tinypic.com/29x94s3.jpg"> <!--660x240 image-->
+</div>
+ 
+<h1>Rez</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Reznik Krall<br>
+    <i>Age:</i> 25<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 6 foot 1 inch<br>
+    <i>Eyes:</i> Scarlet<br>
+    <i>Hair:</i> Scarlet<br>
+    <i>Birthday:</i> June 1<br>
+    <i>Romance:</i> Demiromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Welder<br>
+    <i>Currently:</i> <br>
+    <i>Face Claim:</i> Luchino Gregoretti
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    Reznik is not the best at expressing his feelings or enjoying himself around the outside world. He tries to be better around people but it’s rather difficult when his time spent in prison had him doing his best to stay away from everyone always. Unknown people make him wary though not particularly nervous, keeping him constantly wondering when he’s going to need to leave to keep them from getting weird on him.
+</p>
+<p>
+	There’s a kindness in him that rarely shows in a common form, taking shape in the ways that either protect or do their best to remove harm from others. Those that appear to weak or unwilling to defend themselves have a better chance of seeing this side, as he has a habit of trying to help by removing whatever threat -if present- and trying his best to fix the damage done. This becomes increasingly more likely the cuter he finds the one in trouble as he has a severe weakness to cute things.
+</p>
+<p>
+	Smiles are incredibly rare. Reznik feels as if he has little reason to smile and things don’t change that thought very often. His demeanor is a much more neutral one, keeping most of his emotions subdued and difficult to read unless that emotion happens to be incredibly strong. That’s how he likes it. The idea of having others know what’s going on in his head unsettles him probably to a unusual degree, his innate abilities giving him the clarity to think that maybe there are others with such things as well. Things that could possibly learn things about him that he doesn’t like.
+</p>
+<p>
+	Irritation and the feeling of being exceedingly tired are the easiest emotions to evoke from him, though one is far more a feeling than an actual emotion. There’s a slight bit of an anger problem seated within him that makes it easy to set him off if something is being particularly frustrating. Getting him calmed down is a much more difficult feat, one that rarely gets the chance to happen around other people due to his need to leave these kinds of situations.
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    From an early age, Reznik learned that he liked to make his own rules. Whether it was with other children or in his home, he far preferred doing whatever he liked instead of whatever was desired of him. Most found his habits abrasive and difficult to get along with so he spent much of his time with only a small group of friends, not caring an ounce about the others that chose to stay farther away. His life would only consist of those that could tolerate him at least as much as he could tolerate them.
+</p>
+<p>
+	Frustrationg was the best way to describe Reznik’s childhood.
+</p>
+<p>
+	On the one hand, Reznik wanted to be anywhere other than caged in the school system for the next fifteen years or so of his life. On the other hand, his parents stressed that it was essential for every child to make their way through the educational system. Highschool was at least necessary for any kind of life you wanted to live. Their disagreements were often and many, ranging from a variety of reasons that all landed on the child unable to sit himself at a desk.
+</p>
+<p>
+	Ditching. Bad mouthing. Being a general pain in the ass when he couldn’t get himself off the premises. Not standing and taking it from the officers who tried to drag him back home when a small child was obviously roaming on his own in the middle of a school day. The list went on and on for miles, and his actions were only made more effective by the traits he’d found budding within himself during his exploits.
+</p>
+<p>
+	Like those people that claimed to be able to read the futures of others, Reznik had found himself with a gift he didn’t understand. Not understanding and taking total advantage of his new abilities were completely different concepts, however, and it was with this invisible power of force and will that he managed to execute most any plan to escape school that he came up with. Telekinesis, he found, was a useful tool.
+</p>
+<p>
+	It was a constant struggle between child and parents, frequently resulting in more than a few fights turning a little more physical than was strictly needed. They didn’t want to have a son that wouldn’t amount to anything, and he didn’t want to be told what to do for a single second. The last thing he wanted from the time he was old enough to decide for himself was to choose for himself. 
+</p>
+<p>
+	More and more his powers were used to get him away from home and everywhere he was expected to be, eventually leading to his disappearance from home at fifteen. Being a problem child had worn out its welcome for both him and his family. His leaving brought about nothing but relief from the parents that wanted nothing to do with him, leaving him free to live his life on his own without the interference of missing child report.
+</p>
+<p>
+	It wasn’t growing up that he wasn’t ready for, nor was it those abilities that aided him when he felt the need. It wasn’t living on his own. It was, however, the string of murders that cropped up around the country.
+</p>
+<p>
+	They didn’t matter to him for the longest time. Brutal murders of children too young for highschool didn’t impact his life in the least. That was, until the one responsible got too big to continue. Needing a scapegoat and having Reznik finding himself close enough to work, he was framed for the dozens of horrific murders he had absolutely nothing to do with. As is always the case when it comes to both serial killers and child murder, it wasn’t difficult to convict.
+</p>
+<p>
+	The time during his trial was the worst for him, physically. At that point he was still in the prison with the rest of the inmates, and if there’s one thing even criminals don’t like it’s the ones who do unspeakable things to children. This turned into torments, death threats, and attacks for the innocent man, having to fend off people whenever he came near them. It was a hell that left him in no way ready to stand up for himself in the court. Directly after he was convicted was when it became downright brutal, those few short days before he was taken to his new home.
+</p>
+<p>
+	Reznik spent the next five years of his life on Death Row, awaitinng an execution that likely wouldn’t come for at least a decade. Every day getting abuse from the guards and his own fracturing mind for the particularly heinous nature of his crimes. It came to the point where he questioned if he really had done it. Self-hate ran rampant no matter what he thought of himself on any given day, the silence of his sentence weighing down from him on every side of his emtpy cell only to be broken when the guards decided to hate him for him.
+</p>
+<p>
+	Near the conclusion of that fifth year was when the evidence surfaced, bringing light to the innocence they’d failed to see when he was first brought to court. Reznik didn’t care anymore. He said nothing on his own behalf, did nothing aside from sit and wait to hear what they decided for him.
+</p>
+<p>
+	He was let off with an apology, released back into the world as if he hadn’t gone through hell for no reason. From then on he did his best to live an actual life though it was one that could hardly be counted as such, his job and his small home about it when it came to the extent of his interest. Despite this Reznik finds himself out wandering often at any given time of day to try and find a reason to the sort-of life he leads. This far, after a year, he’s come up with nothing.
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    <i>Hand to Hand Combat:</i> As Reznik’s usual line of defense, his skill with his hands is nothing short of proficient. His strength is used as his advantage in this form, making him quite a force to be reckoned with - especially if one can’t get out of the way fast enough. Hits are hard and fast though his body isn’t as dexterous as it is strong , making it more difficult to dodge as easily as it is for him to block or attack. But as fit as he is, he hardly cares.
+</p>
+<p>
+	<i>Innate Telekinesis:</i> An ability he’s fond of yet doesn’t like people to know about. In a world that looks so very average on the outside, being one that sees under that blanket of normality is not a fact he likes to share. Things move with his thoughts, doing as he likes with a force of energy that cannot be seen or touched, but can be felt and affect the world around him.
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/2315c651658ad1d024c93766266ac78a/tumblr_inline_pma3smIUmC1spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        Really in the mood to buy a kitten and self destruct</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        I think it's important to realize that no matter how good you are to people, it won't make them good to you</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Boyfriend: I didn't cry today<br><br>Me: You cried 10 minutes ago because your socks were too stretchy<br><br>Boyfriend: I only cried when it was important</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Just spotted a cat on someone's porch, meowing to be let in. Without thinking, I walked up to the door, rang the bell, nodded to the cat and left. It was only when I rounded the corner I realized what I'd done as I heard the owner shouting FUCK ME SARAH THE CAT JUST RANG THE DOORBELL</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Drinking vinegar consectetur enim aliquip, fugiat et actually four          loko. Beard enim whatever pug eiusmod, ea vegan.</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/0024e54c35a18c7e2aad4694e5fc27b0/tumblr_inline_pmc44ut60d1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/a5a3a6f79d58697fb61bf36418ee8ebd/tumblr_inline_pmc44wMyqT1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/a23d806978e999762ff056b6d6f56e00/tumblr_inline_pmc44x1ajA1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/f7aa23f9b75a50013a3f30cf1f926c19/tumblr_inline_pmc44yKD0z1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/d1bb605311a848d26cba15c9cdcb1eaa/tumblr_inline_pmc44vZAR61spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/3a02e5273ac3c891dc2a124c40eb735c/tumblr_inline_pmc44zOPsS1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/015e6c9aa833a964738148257b8d9c34/tumblr_inline_pmc450a7yF1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/afcb31393c0c4987150032249719ab37/tumblr_inline_pmc44yOsqp1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/df70baaa2cad7178c7e89a5aeb94bb48/tumblr_inline_pmc451VdBK1spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END REZ--------------------------->
+
+
+
+<!--------------------------BEGIN ILLYA-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="http://i66.tinypic.com/347fiwh.png"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Illya
+        <div class="etc">Subtitle
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="https://66.media.tumblr.com/976ebe80b12533081c14ccb8152a04ea/tumblr_inline_pma2wklfcE1spijl1_540.png"> <!--660x240 image-->
+</div>
+ 
+<h1>Illya</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Ilya Levin<br>
+    <i>Age:</i> 20<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 5 foot 7 inches<br>
+    <i>Eyes:</i> Violet<br>
+    <i>Hair:</i> White / Black<br>
+    <i>Birthday:</i> August 19<br>
+    <i>Romance:</i> Homoromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Forensic Science Major<br>
+    <i>Currently:</i> <br>
+    <i>Power From:</i> Zale
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/cc7a9771e94d5d7c8b1077909b1759f8/tumblr_inline_pma0nhSwvG1spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        Lo-fi wayfarers magna elit, forage umami <span>@gastropub</span> sed cardigan             tousled ugh helvetica post-ironic.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        My man just FaceTimed me drunk as hell eating a slice of pizza while walking down the street and he ges YOU WANNA KNOW HOW PERFECT YOU ARE? LOOK AT THIS PIZZA... FOR YOU, I'LL DROP THIS PIZZA. IT'S GONE! and just threw the damn pizza into the street</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        sorry not to be loud but me and my mocha frappuccinos are breaking down the barriers of toxic masculinity. no whip tho pls watching the cals</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Authentic franzen actually chillwave fashion axe godard.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Drinking vinegar consectetur enim aliquip, fugiat et actually four          loko. Beard enim whatever pug eiusmod, ea vegan.</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/d2f42e3380f933781bb9ad4102a20053/tumblr_inline_pm0tqtVvqg1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/323b71af116987222e13faab175c74ca/tumblr_inline_pm0tqucfPD1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/c58d7527b44ee4c43225ae405175c8a2/tumblr_inline_pm0tqtxw9v1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/f83cb6b3645667c3b84dad1a24fa87e2/tumblr_inline_pmc1v8NYb41spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/ad708c8452de151aa1140d374decd36a/tumblr_inline_pm0tquRTeI1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/970f49ee99ced8a33ace6d143269eeb9/tumblr_inline_pmc1v7aHNa1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/85ae3281783c15081b34f936e481af31/tumblr_inline_pmc1v8Iwzr1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/9ac12a6076fa9fa43b0c721b2b8e7e9b/tumblr_inline_pmc1v9yMzA1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/4ec674300c51bccaee20c37ff0d3ca1a/tumblr_inline_pmc1v9eKnR1spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END ILLYA--------------------------->
+
+
+
+<!--------------------------BEGIN SIGGE-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="http://i67.tinypic.com/1z6ruro.png"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Sigge
+        <div class="etc">Vixen
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="https://66.media.tumblr.com/cca0b80120c885f13c4d2caceff86c9d/tumblr_inline_pma27krGZZ1spijl1_540.png"> <!--660x240 image-->
+</div>
+ 
+<h1>Sigge</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Ilya Levin<br>
+    <i>Age:</i> 20<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 5 foot 7 inches<br>
+    <i>Eyes:</i> Violet<br>
+    <i>Hair:</i> White / Black<br>
+    <i>Birthday:</i> August 19<br>
+    <i>Romance:</i> Homoromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Forensic Science Major<br>
+    <i>Currently:</i> <br>
+    <i>Power From:</i> Nivea
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/7c2e9c498f831a32c9ad7f970adaf458/tumblr_inline_pma0nh2A7D1spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        fuck sex the real question is can I chill with yo ass all day and not get bored or irritated</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Ut magna williamsburg, knausgaard pug truffaut sapiente gastropub           ennui quis <span>#actually</span> small batch literally id gentrify.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Chicharrones williamsburg venmo craft beer.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Authentic franzen actually chillwave fashion axe godard.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Drinking vinegar consectetur enim aliquip, fugiat et actually four          loko. Beard enim whatever pug eiusmod, ea vegan.</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/4f525e1416a19983cba18e0673eadd02/tumblr_inline_pma2i3awyx1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/2837a5a2262bc2cba29006af9a4354b5/tumblr_inline_pma2i0pWdf1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/1bcd2b4f449243628422b9e4deeef107/tumblr_inline_pma2i1k3651spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/a02371882158608f94d43f240fcc90b4/tumblr_inline_pma2i2f8Si1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/5231110efb8556a211e06583e1a8129f/tumblr_inline_pma2i1u1wb1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/f1eb1161e4bcf468b7503fb5de2fffe7/tumblr_inline_pma2i46YZZ1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/ce90399fffc2ab6f7ac5981630bb6bdf/tumblr_inline_pmc14hwlP41spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/3e83de5776dd04a9b4c759affd75c2ff/tumblr_inline_pmc19kzMwU1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/f6ce75016cfeee06dec8fd48bc332bcc/tumblr_inline_pmc14hz3Uw1spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END SIGGE--------------------------->
+
+
+<!--------------------------BEGIN CAS-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="http://i63.tinypic.com/287ni2a.png"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Cas
+        <div class="etc">Bunny
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="https://66.media.tumblr.com/3eb62978ed05e822a1f76c5cb2d5ff28/tumblr_inline_pma3g19pmV1spijl1_540.jpg"> <!--660x240 image-->
+</div>
+ 
+<h1>Cas</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Ilya Levin<br>
+    <i>Age:</i> 20<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 5 foot 7 inches<br>
+    <i>Eyes:</i> Violet<br>
+    <i>Hair:</i> White / Black<br>
+    <i>Birthday:</i> August 19<br>
+    <i>Romance:</i> Homoromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Forensic Science Major<br>
+    <i>Currently:</i> <br>
+    <i>Power From:</i> Illian
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/74250dd64e1bb27ef86dc8ac08b66372/tumblr_inline_pma0mwC0B31spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        I have just been napping all day...and I'm exhausted</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        A Teenager is basically someone who is ready for an apocalypse but not ready for a test tomorrow</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        List of things I'm handling well currently:<br>1.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        mood: nah</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        my secret talent is getting tired without doing anything</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/d63c74cae0a5eea0de41c89b4f9e1073/tumblr_inline_pm0ve4Pyzs1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/cad65bfcbad5bda7d92e739e0f12be52/tumblr_inline_pm0ve4ib2D1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/e41d4595cbf76487b405c60fb6b14179/tumblr_inline_pm0ve5hAzr1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/a0045cb9f8c71857be13165507a79865/tumblr_inline_pm0ve4FKlg1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/d26919e528b6329fde4849243cf3dc0f/tumblr_inline_pm0ve4BmAo1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/81680af1255d194871d3f5fa5770fc88/tumblr_inline_pm0ve59Fy91spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/eafe791a7173c205f254d00a17b65bcb/tumblr_inline_pmc2ynYNTO1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/5b43701d3a885ff446cf94e73447d773/tumblr_inline_pmc2yoPva11spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/bbfb4ee34a10db6e776c66e35a685e4e/tumblr_inline_pmc2ypaDjw1spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END CAS--------------------------->
+
+
+<!--------------------------BEGIN BODHI-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="https://66.media.tumblr.com/db714035a96d39519ae8f261c22ce8e0/tumblr_inline_pmbpz0H7TT1spijl1_540.png"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Bodhi
+        <div class="etc">Art Thief
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="http://i67.tinypic.com/15cd3c3.png"> <!--660x240 image-->
+</div>
+ 
+<h1>Cas</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Bodhi Argall<br>
+    <i>"Name":</i> August<br>
+    <i>Age:</i> 20<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 5 foot 7 inches<br>
+    <i>Eyes:</i> Violet<br>
+    <i>Hair:</i> White / Black<br>
+    <i>Birthday:</i> August 19<br>
+    <i>Romance:</i> Homoromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Forensic Science Major<br>
+    <i>Currently:</i> <br>
+    <i>Power From:</i> Creed
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/c87dffd4db075a1bdc53d46d95912f9a/tumblr_inline_pm683r5tes1spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        You ever just look at someone and think...shut up...even if they haven't said anything yet</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        "I don't want a whole dessert, let's just get 2 spoons" - Former Friends of Mine</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Chicharrones williamsburg venmo craft beer.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Authentic franzen actually chillwave fashion axe godard.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Drinking vinegar consectetur enim aliquip, fugiat et actually four          loko. Beard enim whatever pug eiusmod, ea vegan.</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/afac7b832f43d43df984cda2a21b4e76/tumblr_inline_pmbyb0Ps481spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/80bb76d8c1875e6a305b75dbc75ed7ba/tumblr_inline_pmbyb0sDKU1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/9defdc54b4110a9411c02b98d18120f5/tumblr_inline_pmbyazJ1Qi1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/40a56b87f89d8074b9b2e94784e18121/tumblr_inline_pmbyb2kaZg1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/be53ee066c1f2e6726f2f8e1e93d1d4e/tumblr_inline_pmbyb1VG7U1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/89164980582af129fc7a44d163699fba/tumblr_inline_pmbyb3uR6j1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/ce26807fd1cedcb5566f9c7910ae115f/tumblr_inline_pmbyb3DTjH1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/97687840064bc087ca31b853e4b75028/tumblr_inline_pmbyb0DKC11spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/c711fe9e13063e43b1961beffd8120ef/tumblr_inline_pmbyb2IOs11spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END BODHI--------------------------->
+
+
+
+<!--------------------------BEGIN ALEKSIS-------------------------->
+ 
+<div class="grid-item thing thing thing">
+ 
+<!--small/before click section-->
+ 
+<div class="intro">
+    <img src="https://66.media.tumblr.com/70eb4bfe7680cf21622bb41f3153a858/tumblr_inline_pm0ltvYpdK1spijl1_540.jpg"> <!--340x240 image-->
+    <div class="expand">
+        <div class="name">Aleksis
+        <div class="etc">Thief
+        </div>
+        </div>
+    </div>
+</div>
+ 
+<!--expanded/after click section-->  
+ 
+<div class="header">
+    <img src="http://i67.tinypic.com/54k88.jpg"> <!--660x240 image-->
+</div>
+ 
+<h1>Aleksis</h1>
+ 
+<div class="bio">
+    <h2>B a s i c</h2>
+<p>
+    <i>Name:</i> Aleksis Krumins<br>
+    <i>"Name":</i> Sean<br>
+    <i>Age:</i> 20<br>
+    <i>Sex:</i> Male<br>
+    <i>Race:</i> Human<br>
+    <i>Height:</i> 5 foot 7 inches<br>
+    <i>Eyes:</i> Violet<br>
+    <i>Hair:</i> White / Black<br>
+    <i>Birthday:</i> August 19<br>
+    <i>Romance:</i> Homoromantic<br>
+    <i>Sexuality:</i> Homosexual<br>
+    <i>Occupation:</i> Forensic Science Major<br>
+    <i>Currently:</i> <br>
+    <i>Power From:</i> Idella
+</p>
+
+<p>
+<h2>P e r s o n a l i t y</h2>
+<p>
+    
+</p>
+
+
+
+<h2>Q u i r k s</h2>
+<p>
+    <i>Qurik:</i> 
+</p>
+
+<h2>H i s t o r y</h2>
+<p>
+    
+</p>
+
+<h2>A b i l i t i e s</h2>
+<p>
+    
+</p>
+
+</div>
+   
+<!---------------------------twitter section--------------------------->
+ 
+<div class="box">
+ 
+<div class="twitterinfo">
+    <img src="https://66.media.tumblr.com/23ed515951c5915560904ef1a01241d7/tumblr_inline_pmbu7pJWc71spijl1_540.jpg">
+ 
+    <h2>name
+    <span>@username</span></h2>
+ 
+    <p>Meditation 8-bit et cornhole irony. Banjo fanny pack pickled duis. Farm-to-table delectus messenger bag, neutra everyday carry nisi. <a href="http://bit.ly/98K8eH">bit.ly/98K8eH</a></p>
+ 
+    <ul class="stats">
+        <li class="what">what</li>
+        <li class="location">place</li>
+        <li class="joined">Joined Month 20XX</li>
+        <li class="born">Born on Month 00, 19XX</li>
+    </ul>
+</div>
+ 
+<div class="feed">
+ 
+<!--- TIP: put <span> around words in the section below to change the color of the words. it makes a faux hashtag, link or @ -->
+ 
+    <ul>
+        <li><b>name</b> <i>@username</i><br>
+        Kinda wanna text you kinda wanna kick you in the face</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        "drop the attitude" First of all, I didn't have an attitude but I can pick one up real quick</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Chicharrones williamsburg venmo craft beer.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Authentic franzen actually chillwave fashion axe godard.</li>
+ 
+        <li><b>name</b> <i>@username</i><br>
+        Drinking vinegar consectetur enim aliquip, fugiat et actually four          loko. Beard enim whatever pug eiusmod, ea vegan.</li>
+    </ul>
+</div>
+ 
+</div>
+ 
+<!--------------------------instagram section-------------------------->
+ 
+<div class="instagram box">
+<h2>@instaname <span>— some cool bio thing here</span></h2>
+    <img src="https://66.media.tumblr.com/480c85b66d68b8b1e4664daba140bab4/tumblr_inline_pmc00jSY1z1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/6cf5c13d632bd551716da9ae7c668c3e/tumblr_inline_pmc00lspwF1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/9d22fe236079eb9df7f512ad560445ac/tumblr_inline_pmc00iclqp1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/517e590977dd36ec17046f4da0573eb9/tumblr_inline_pmc00kIRez1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/3fb782bd0dc1dd13e67e4c295c071223/tumblr_inline_pmc00mhe4A1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/60bbff5c861455955ade32ef111eb718/tumblr_inline_pmc00kd2Lw1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/8beaaf9bff92cb2e3c61f714a0cff000/tumblr_inline_pmc00jiVyV1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/46d76e54bbffd1944d27a0924384df61/tumblr_inline_pmc00izEHA1spijl1_540.jpg">
+    <img src="https://66.media.tumblr.com/6e820bb5ba5d11f5c45f601c74f726be/tumblr_inline_pmc00niHQn1spijl1_540.jpg">
+</div>
+
+ 
+</div>
+ 
+<!---------------------------END thief--------------------------->
+
+ 
+ 
+</div><!--end container-->
+ 
+  </body>
+</html>
