@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+               
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="nofollow" />
+ 
+<!--hello dear tumblr user
+        i hope you will find this page code useful
+        this is coded from scratch (except the jquery and javascript) so
+        please do not:
+                > redistribute
+                > claim as own
+                > use as base code
+                > remove credit
+                > remove this [you can remove my other commentaries though]
+        you can, however customise it to your liking
+        otherwise i will find you, and then i will skin you.
+       
+        thanks to kunkalabs.com for the perfect mixitup jquery plugin
+         > https://mixitup.kunkalabs.com/
+         
+        any questions and problems, please let me know so i could fix it myself
+       
+        the contents are fluid so it should look fine on any screen resolution
+        but best viewed in google chrome!!
+        but youre a tumblr user so obviously youre using chrome
+       
+        enjoy the page, butterfly :3
+                - mara (noshtholmes.tumblr.com)-->
+ 
+<title>{title}</title>
+ 
+ <link rel="shortcut icon" href="{Favicon}">
+ 
+<!--borrowed a font from google lmao-->
+ 
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,400' rel='stylesheet' type='text/css'>
+ 
+<style type="text/css">
+ 
+/* some basic css bullshit */
+ 
+body {
+        background: #000;
+        font-family: Roboto Condensed, calibri;
+        font-size: 11px;
+        color: #6d0000;
+}
+ 
+* {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+ 
+/* dividers */
+ 
+#contain {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+}
+ 
+#sidebar {
+        display: table;
+        padding: 20px;
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        float: left;
+        background: url('http://i58.tinypic.com/2irsit.jpg') fixed;
+        border-right: 10px solid #000;
+        color: #eee;
+        text-align: center;
+}
+ 
+#right {
+        position: relative;
+        margin-left: 320px;
+        height: auto;
+        width: auto;
+}
+ 
+#valign {
+        display: table-cell;
+        vertical-align: middle;
+}
+ 
+/* links which is irrelevant */
+       
+a, a:link, a:active, a:hover {
+        text-decoration: none;
+        color: #3d3d3d;
+}
+ 
+/* stuff in the sidebar */
+ 
+h1 {
+        font-family: roboto condensed;
+        font-size: 90px;
+        color: #fff;
+        line-height: 70px;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        padding: 0;
+        text-shadow: 2px -1px 0px rgba(221, 221, 221, 1);
+}
+ 
+h1:first-letter {
+        color: #e04107;
+        text-shadow: 2px -1px 0px rgba(255, 255, 255, 1);
+}
+ 
+/* description style in the sidebar */
+ 
+.hdesc {
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        margin: 0 0 10px 0;
+}
+ 
+/* nav or category links */
+ 
+a.bblog, button {
+        display: block;
+        padding: 5px;
+        margin: 2px 0px;
+        background: #5a5a5a;
+        color: #bd0303;
+        width: 100%;
+        text-transform: lowercase;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 0.7;
+        font-family: calibri, 'Helvetica Neue', arial, sans-serif;
+        border: 0;
+        text-align: center;
+}
+ 
+a.bblog:hover, button:hover {
+        background: #ddd;
+        color: #333;
+        -moz-transition-duration:.90s;
+        -webkit-transition-duration:.90s;
+        -o-transition-duration:.90s;
+}
+ 
+button:focus {
+        outline: 0 none;
+}
+ 
+/* button:active and button.active arent the same */
+ 
+button:active {
+        background: #eee;
+}
+ 
+button.active {
+        background: transparent;
+        color: #e04107;
+}
+ 
+/* DO NOT change these, it will confuse the javascript,
+        just the styles */
+ 
+.container {
+        padding: 0px;
+        font-size: 0.1px;
+        -webkit-backface-visibility: hidden;
+}
+ 
+.container .mix,
+.container .gap {
+        display: inline-block;
+}
+ 
+/* this is the fic box */
+ 
+.container .mix {
+        text-align: left;
+        border: 0;
+        width: 300px;
+        background: #333333;
+        border-bottom: 10px solid #b61c02;
+        height: 250px;
+        overflow: hidden;
+        margin: 10px 5px 0px 5px;
+        padding: 0px;
+        display: none;
+}
+ 
+/* title of the fic */
+ 
+.title {
+        width: 100%;
+        background: #b61c02;
+        color: #fff;
+        padding: 5px 0px 5px 10px;
+        height: auto;
+        font-family: Roboto Condensed;
+        font-size: 14px;
+        text-align: left;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+}
+ 
+/* author of the fic */
+ 
+.title span {
+        display: block;
+        font-size: 10px;
+        padding-left: 10px;
+        font-style: italic;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: 1px;
+}
+ 
+/* pardon these funky identifiers i couldnt think of anything
+        anyway, this is the rating: or information: or summary: bullshit header */
+ 
+div.heady {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #1a1a1a;
+        padding: 5px;
+}
+ 
+/* this is the text that comes after the bullshit header above */
+ 
+div.ayo {
+        font-size: 11px;
+        color: #a5a5a5;
+        font-style: italic;
+        font-family: calibri;
+        padding: 0px 0px 0px 15px;
+}
+ 
+.ayo:before {
+        content: "» ";
+}
+ 
+/* nevermind this
+        this controls the overflow of the box */
+ 
+.info {
+        float: left;
+        width: auto;
+        height: 200px;
+        margin: 0px;
+        padding: 3px 10px 10px 5px;
+        overflow: auto;
+        text-align: left;
+}
+ 
+div.info::-webkit-scrollbar {width: 3px;}
+div.info::-webkit-scrollbar-track {background: transparent; border: 0;}
+div.info::-webkit-scrollbar-thumb {background: #bd0303;}
+ 
+/* my nice lil credit */
+ 
+a.credit, a.credit:link, a.credit:active {
+        display: inline-block;
+        font-family: cambria;
+        background: #fff;
+        color: #a1a1a1;
+        width: auto;
+        font-size: 10px;
+        font-style: italic;
+        margin: 20px 0 0 0;
+        padding: 5px;
+        opacity: 0.6;
+}
+ 
+a.credit:hover {
+        color: #fff;
+        background: #a1a1a1;
+        -moz-transition-duration:.70s;
+        -webkit-transition-duration:.70s;
+        -o-transition-duration:.70s;
+}
+ 
+</style>
+ 
+<body>
+<div id="contain">
+ 
+<div id="sidebar">
+ 
+        <div id="valign"> <!--vertically centers sidebar content in case youre wondering-->
+ 
+<h1>Opinions / Relationships</h1>
+ 
+  <div class="hdesc">Description here. Or not, that's cool too. I've got instructions and tips on how to use this page on my post in my blog. Yeah, jquery's cool isn't it? It's been awhile.</div>
+ 
+  <!--the link back to ur blog-->
+        <a class="bblog" href="/">Home</a>
+       
+  <!--categories-->
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter=".childhood">Childhood</button>
+        <button class="filter" data-filter=".family">Family</button>
+        <button class="filter" data-filter=".love">Love</button>
+        <button class="filter" data-filter=".sexual">Sexual</button>
+        <button class="filter" data-filter=".abilities">Abilities</button>
+        <button class="filter" data-filter=".people">People</button>
+        <button class="filter" data-filter=".misc">Misc</button>
+ 
+ 
+<!-- CREDIT PLS DO NOT REMOVE i mean its already small enough-->
+        <a class="credit" href="http://noshtholmes.tumblr.com">NSH</a>
+ 
+        </div> <!--valign end-->
+</div> <!--sidebar end-->
+ 
+<div id="right">
+ 
+        <div id="Container" class="container">
+        
+ 
+<!----whole fic box starts here--->
+<div class="mix family people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Father Dear <span>Burden of Blood</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/5db6f627efa78bf0a7c88d534adf926d/tumblr_inline_n4z6qlT3qe1s1k3j7.jpg"/></center>
+        <div class="ayo">
+        <p>
+            
+        </p>
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+        </div> <!-container end->
+ 
+<br><br>
+ 
+</div> <!--right end-->
+ 
+</div> <!--contain end-->
+ 
+ <!--stuff for the categorising - dont fiddle with this-->
+                <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+                <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+                <script>
+                // On document ready:
+ 
+        $(function(){
+ 
+                // Instantiate MixItUp:
+ 
+                $('#Container').mixItUp();
+ 
+                });
+                </script>
+ 
+</body>
+</html>
