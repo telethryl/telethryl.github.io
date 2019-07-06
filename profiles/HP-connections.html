@@ -1,385 +1,926 @@
-<html>
-   <!----
-    © hunterthemes.tumblr.com | Page #14 - Directory (bright)
-   * Do not redistribute this page and claim it as your own.
-   * Do not remove the credit or move it to another page.
-   * Minor changes to this page are allowed.
-    ---->
-  
-<!-- GOOGLE FONTS -->
-<style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="stylesheet" media="screen" href="https://assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css?_v=ef3c5f9e2bfc3b55a525701220c2a0e7"><link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Nova+Slim' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Rozha+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Almendra" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+               
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
  
-<meta charset="utf-8">
-<title>HP Connections</title>
-<link rel="stylesheet" type="text/css" href="css/HP-connections.css">
-<link rel="alternate" type="application/rss+xml" href="https://hunterthemes-static.tumblr.com/rss">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--hello dear tumblr user
+        i hope you will find this page code useful
+        this is coded from scratch (except the jquery and javascript) so
+        please do not:
+                > redistribute
+                > claim as own
+                > use as base code
+                > remove credit
+                > remove this [you can remove my other commentaries though]
+        you can, however customise it to your liking
+        otherwise i will find you, and then i will skin you.
+       
+        thanks to kunkalabs.com for the perfect mixitup jquery plugin
+         > https://mixitup.kunkalabs.com/
+         
+        any questions and problems, please let me know so i could fix it myself
+       
+        the contents are fluid so it should look fine on any screen resolution
+        but best viewed in google chrome!!
+        but youre a tumblr user so obviously youre using chrome
+       
+        enjoy the page, butterfly :3
+                - mara (noshtholmes.tumblr.com)-->
  
-<!-- HTML -->
+<title>{title}</title>
+ 
+ <link rel="shortcut icon" href="{Favicon}">
+ 
+<!--borrowed a font from google lmao-->
+ 
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,400' rel='stylesheet' type='text/css'>
+ 
+<style type="text/css">
+ 
+/* some basic css bullshit */
+ 
+body {
+        background: #000;
+        font-family: Roboto Condensed, calibri;
+        font-size: 11px;
+        color: #6d0000;
+}
+ 
+* {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+ 
+/* dividers */
+ 
+#contain {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+}
+ 
+#sidebar {
+        display: table;
+        padding: 20px;
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        float: left;
+        background: url('http://i58.tinypic.com/2irsit.jpg') fixed;
+        border-right: 10px solid #000;
+        color: #eee;
+        text-align: center;
+}
+ 
+#right {
+        position: relative;
+        margin-left: 320px;
+        height: auto;
+        width: auto;
+}
+ 
+#valign {
+        display: table-cell;
+        vertical-align: middle;
+}
+ 
+/* links which is irrelevant */
+       
+a, a:link, a:active, a:hover {
+        text-decoration: none;
+        color: #3d3d3d;
+}
+ 
+/* stuff in the sidebar */
+ 
+h1 {
+        font-family: roboto condensed;
+        font-size: 90px;
+        color: #fff;
+        line-height: 70px;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        padding: 0;
+        text-shadow: 2px -1px 0px rgba(221, 221, 221, 1);
+}
+ 
+h1:first-letter {
+        color: #e04107;
+        text-shadow: 2px -1px 0px rgba(255, 255, 255, 1);
+}
+ 
+/* description style in the sidebar */
+ 
+.hdesc {
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        margin: 0 0 10px 0;
+}
+ 
+/* nav or category links */
+ 
+a.bblog, button {
+        display: block;
+        padding: 5px;
+        margin: 2px 0px;
+        background: #5a5a5a;
+        color: #bd0303;
+        width: 100%;
+        text-transform: lowercase;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 0.7;
+        font-family: calibri, 'Helvetica Neue', arial, sans-serif;
+        border: 0;
+        text-align: center;
+}
+ 
+a.bblog:hover, button:hover {
+        background: #ddd;
+        color: #333;
+        -moz-transition-duration:.90s;
+        -webkit-transition-duration:.90s;
+        -o-transition-duration:.90s;
+}
+ 
+button:focus {
+        outline: 0 none;
+}
+ 
+/* button:active and button.active arent the same */
+ 
+button:active {
+        background: #eee;
+}
+ 
+button.active {
+        background: transparent;
+        color: #e04107;
+}
+ 
+/* DO NOT change these, it will confuse the javascript,
+        just the styles */
+ 
+.container {
+        padding: 0px;
+        font-size: 0.1px;
+        -webkit-backface-visibility: hidden;
+}
+ 
+.container .mix,
+.container .gap {
+        display: inline-block;
+}
+ 
+/* this is the fic box */
+ 
+.container .mix {
+        text-align: left;
+        border: 0;
+        width: 300px;
+        background: #333333;
+        border-bottom: 10px solid #b61c02;
+        height: 250px;
+        overflow: hidden;
+        margin: 10px 5px 0px 5px;
+        padding: 0px;
+        display: none;
+}
+ 
+/* title of the fic */
+ 
+.title {
+        width: 100%;
+        background: #b61c02;
+        color: #fff;
+        padding: 5px 0px 5px 10px;
+        height: auto;
+        font-family: Roboto Condensed;
+        font-size: 14px;
+        text-align: left;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+}
+ 
+/* author of the fic */
+ 
+.title span {
+        display: block;
+        font-size: 10px;
+        padding-left: 10px;
+        font-style: italic;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: 1px;
+}
+ 
+/* pardon these funky identifiers i couldnt think of anything
+        anyway, this is the rating: or information: or summary: bullshit header */
+ 
+div.heady {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #1a1a1a;
+        padding: 5px;
+}
+ 
+/* this is the text that comes after the bullshit header above */
+ 
+div.ayo {
+        font-size: 11px;
+        color: #a5a5a5;
+        font-style: italic;
+        font-family: calibri;
+        padding: 0px 0px 0px 15px;
+}
+ 
+.ayo:before {
+        content: "» ";
+}
+ 
+/* nevermind this
+        this controls the overflow of the box */
+ 
+.info {
+        float: left;
+        width: auto;
+        height: 200px;
+        margin: 0px;
+        padding: 3px 10px 10px 5px;
+        overflow: auto;
+        text-align: left;
+}
+ 
+div.info::-webkit-scrollbar {width: 3px;}
+div.info::-webkit-scrollbar-track {background: transparent; border: 0;}
+div.info::-webkit-scrollbar-thumb {background: #bd0303;}
+ 
+/* my nice lil credit */
+ 
+a.credit, a.credit:link, a.credit:active {
+        display: inline-block;
+        font-family: cambria;
+        background: #fff;
+        color: #a1a1a1;
+        width: auto;
+        font-size: 10px;
+        font-style: italic;
+        margin: 20px 0 0 0;
+        padding: 5px;
+        opacity: 0.6;
+}
+ 
+a.credit:hover {
+        color: #fff;
+        background: #a1a1a1;
+        -moz-transition-duration:.70s;
+        -webkit-transition-duration:.70s;
+        -o-transition-duration:.70s;
+}
+ 
+</style>
+ 
 <body>
-
+<div id="contain">
+ 
 <div id="sidebar">
-
-<div class="triangle1"></div>
-
-<div id="mainicons">
-<a href="/" title="Index"><span class="sf sf-home-o"></span></a>
-<a href="profiles/HP.html" title="HP"><span class="sf sf-paperclip-o"></span></a>
-</div> <!--End mainicons-->
-
-<!-- These are the filter links. Don't change ".story" tag because it refreshes the page -->
  
-<div id="sorting">
+        <div id="valign"> <!--vertically centers sidebar content in case youre wondering-->
  
-<ul id="filters" class="option-set clearfix" data-option-key="filter">
-   
-<!-- Replace .tag1, .tag2 etc with names of the tags that you want to add -->
-   
-<div id="titleone"> Title one <div class="sdivider"></div></div>
-<div id="linkboxone">
-<li><a href="#filter" data-option-filter=".tag1"> #tag1 </a></li>
-<li><a href="#filter" data-option-filter=".tag2"> #tag2 </a></li>
-<li><a href="#filter" data-option-filter=".tag3"> #tag3 </a></li>
-<li><a href="#filter" data-option-filter=".tag4"> #tag4 </a></li>
-<li><a href="#filter" data-option-filter=".tag5"> #tag5 </a></li>
-</div>
-<!--End linkboxone-->
-
-<div id="titletwo"> Title two <div class="sdivider"></div></div>
-<div id="linkboxtwo">
-<li><a href="#filter" data-option-filter=".tag6"> #tag6 </a></li>
-<li><a href="#filter" data-option-filter=".tag7"> #tag7 </a></li>
-<li><a href="#filter" data-option-filter=".tag8"> #tag8 </a></li>
-<li><a href="#filter" data-option-filter=".tag9"> #tag9 </a></li>
-<li><a href="#filter" data-option-filter=".tag10"> #tag10 </a></li> 
-</div>
-<!--End linkboxtwo-->
-   
-<div id="titlethree"> Title three <div class="sdivider"></div></div>
-<div id="linkboxthree">
-<li><a href="#filter" data-option-filter=".tag11"> #tag11 </a></li>
-<li><a href="#filter" data-option-filter=".tag12"> #tag12 </a></li>
-<li><a href="#filter" data-option-filter=".tag13"> #tag13 </a></li>
-<li><a href="#filter" data-option-filter=".tag14"> #tag14 </a></li>
-<li><a href="#filter" data-option-filter=".tag15"> #tag15 </a></li> 
-</div>
-<!--End linkboxthree-->
-
-<li><a href="#filter" data-option-filter=".story"> All tags </a></li>
-   
-</ul>
-</div> <!--End sorting-->
-</div> <!--End sidebar-->
-<!-- Container -->
-<div id="container" class="clearfix">
-<!-------Replace tag1, tag2 etc. with the tags you've previously chosen and added to filter links-------->
+<h1>Quirks</h1>
  
+  <div class="hdesc">Description here. Or not, that's cool too. I've got instructions and tips on how to use this page on my post in my blog. Yeah, jquery's cool isn't it? It's been awhile.</div>
+ 
+  <!--the link back to ur blog-->
+        <a class="bblog" href="/">Home</a>
+       
+  <!--categories-->
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter=".childhood">Childhood</button>
+        <button class="filter" data-filter=".family">Family</button>
+        <button class="filter" data-filter=".love">Love</button>
+        <button class="filter" data-filter=".sexual">Sexual</button>
+        <button class="filter" data-filter=".abilities">Abilities</button>
+        <button class="filter" data-filter=".people">People</button>
+        <button class="filter" data-filter=".misc">Misc</button>
+ 
+ 
+<!-- CREDIT PLS DO NOT REMOVE i mean its already small enough-->
+        <a class="credit" href="http://noshtholmes.tumblr.com">NSH</a>
+ 
+        </div> <!--valign end-->
+</div> <!--sidebar end-->
+ 
+<div id="right">
+ 
+        <div id="Container" class="container">
+        
+ 
+<!----whole fic box starts here--->
+<div class="mix family people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Father Dear <span>Burden of Blood</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/5db6f627efa78bf0a7c88d534adf926d/tumblr_inline_n4z6qlT3qe1s1k3j7.jpg"/></center>
+                        <div class="ayo">Once upon a time, Ace was excited and thrilled to learn of his lineage. Son of the Pirate King? What could be cooler? Not understanding the trepidation and disliking the fact that it had to remain secret, the little boy ventured into town to pose the question "what if". Surely people would think it was as cool as he did. "What if Roger had a child?" That one question turned his life upside down. Hatred and malicious intent surrounded him, many brutal ways people wanted him to die filling his young ears.<br><br>
+The son of Roger wasn't supposed to exist. He shouldn't have been born.<br><br>
+Slowly Ace grew to hate Roger. The father once loved for his achievements and life was scorned, sending the child into a volatile rage whenever the name so much as touched his ears. It was <i>his</i> fault everyone hated Ace. <i>His</i> fault the world would be better without one no-more hopeful little boy.<br><br>
+Now older, Ace thinks absolutely nothing of Roger. He's unimportant and only a cause for people to hate him. He aviods the subject and tries to brush it off unless something is directed to him, but he gets nervous inside if someone in the crew mentions it.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Beloved Mother <span>Everything owed, never be repaid</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/4cea5636cf9971b8427773ae816c992e/tumblr_inline_n4z7mhIHKZ1s1k3j7.jpg"/></center>
+                        <div class="ayo">Portgas D. Rouge, the woman Ace has never met and the only one he wish he could. Stories had been told to Ace since before he was old enough to understand the words about how she gave her life for his, to protect him. Even before he was alive, he was loved.<br><br>
+Her not being around hasn't changed his feelings for her at all. Love has been unconditionally given, and so she recieved it in return. Often he wishes she were around to be with him, and he sometimes goes out to the shore late at night to try and feel closer to her.<br><br>
+Because on that shore far away on Baterilla she was standing. In another time, another place, they were looking to the same thing.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix love">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Sexuality <span>Eh? You were flirting?</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/77786c7dcc8389341836aae0a174b5c6/tumblr_inline_n4z7vvKtGR1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace is demisexual. That is, he doesn’t feel attracted to people unless he’s fallen in love with them. Because of this he tends not to notice when people are attracted to him or checking him out. Things like that are simply not on his mind much so he pays them no attention, unless of course he likes the person in question.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Dadan of the Mountain <span>Unlikely Mother</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/bca0d99e44d8a2dff3fd31dfc91bf731/tumblr_inline_n4z84qyYa51s1k3j7.jpg"/></center>
+                        <div class="ayo">All his life, Ace was 'taken care of' by Dadan and her family of mountain bandits. This mainly has consisted of him being given a roof to sleep under and a small room to live in, but that's about the extent of it. Everything Ace wants and needs he gets for himself, and there's little to no communication between him and the bandits. They co-existed but that's it, Ace's home lies elsewhere.<br><br>
+It wasn't uncommon for him to return home late and find, since it meant he didn't return with dinner, that Dadan has dipped into her stores and was drunkenly ranting about him. Ace was fully aware that Dadan doesn't care about him or if he ever returns, and that she considered him a devil.<br><br>
+It wasn't until Luffy came into his life that this changed, and she began to act more like the mother she was to them as Ace thawed his chilly exterior. Her putting her life on the line for him when the Grey Terminal burned made him trust and love her completely, even if he didn't show it all that much sometimes.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Children <span>...no thanks.</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/e3a0cb1a507e606fee7ad8f7895134f1/tumblr_inline_n4z88w3ntM1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace <i>never</i> wants children. He’s terrified that if he does, the children will end up treated how he’d been treated because of his ‘demon blood’.  He doesn’t want anyone to have to go through what he went through as a child, as it’d almost broken him beyond repair. The idea scares him and should it be brought up, he will instantly go defensive and/or hostile.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Phoenix <span>Flames of a different color</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/69b28ac326eb5bd4cb2741d1511659cd/tumblr_inline_n4z8e8TqCy1s7ssqp.jpg"/></center>
+                        <div class="ayo">A certain fascination is held with Marco’s blue flames. As far as he’s aware, there’s no logical explanation for how the fire or the bird itself seem to draw him in. This draws him to the older male, and may or may not connect with how comforting Ace finds his presence.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Hat <span>Present from the dear</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/3347b135afe2a1aa85c3e9ab50dee4da/tumblr_inline_n4z8fl7u351s1k3j7.jpg"/></center>
+                        <div class="ayo">His beloved orange hat was given to him as a present from his little brother, Luffy. He keeps it with him at all times and when he can’t wear it, it’s sitting within grabbing distance. Much like Luffy, Ace keeps his Vivre Card in his hat. He’s made a small pocket on the inside where the paper is safely tucked.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix childhood">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Meeting Sabo <span>And suddenly there's a 5 year old felon</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/3609c8e3d23628dc943d069971642a72/tumblr_inline_n4z8iw0Prf1s1k3j7.jpg"/></center>
+                        <div class="ayo">Friendship had trouble starting off normally for Ace. Sabo wasn't found intentionally, rather he was in a sack being kidnapped when Ace took the liberty of relieving the kidnappers of their burden at the age of five. It wasn't until he was deep into the forest that he released the bag and found not treasure but a boy inside.<br><br>
+Kidnapping is apparently a great way to make friends.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Restless Nights <span>There's truly no escape</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/2691c25b11bbad9dbade605a4a0263e0/tumblr_inline_n4z8lsnEcj1s1k3j7.jpg"/></center>
+                        <div class="ayo">Sleep comes easily to Ace, claiming his mind only a short while after he lays his head down to rest. Nightmares about so many terrible things plague his mind: what he's heard, what he's seen, and what he imagines the future to be like. Violent and lonely things dominate these night time horror shows, and it sends him into an fit to get comfortable that lasts the entire night. When he wakes, he's often sprawled not where he was in a tangle of blankets.<br><br>
+Sleeping with someone nearby calms this and quells the bad dreams, leaving him to sleep peacefully though still with a great deal of moving - unless that nearby person is in contact with him.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Knife Within Reach <span>Habits of the past</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/268ed6106c0f12e4d399655b2a205b73/tumblr_inline_n4z8sl8Mdu1s1k3j7.jpg"/></center>
+                        <div class="ayo">There was a knife kept tucked into Ace's pocket at all times as a kid, though it was never used for fighting or hunting. This was a tool used to gut and dress his food, and he became disturbingly profficient at the task. Since growing up and departing the island, he's kept one on his as well, though now strapped to his waist in plain sight.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Homesick <span>Beads of reminder</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/da62dd773e86f2686cdb5be093a2b6c4/tumblr_inline_n4z8v7OJF11s1k3j7.jpg"/></center>
+                        <div class="ayo">The beads that Ace wears around his neck were bought because they reminded him so much of Dadan that they made him home sick. He wears them to feel close to the family he left behind in Goa.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix abilities">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Locks <span>Can't keep him out</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/8af3bd5cfbb71a10347160fb5ce2d61e/tumblr_inline_n4z8ydydJu1s1k3j7.jpg"/></center>
+                        <div class="ayo">The chefs aboard the Moby Dick, after a few months, got sick of Ace stealing from the fridge in the middle of the night and decided to secure it with a lock. To get around this, Ace learned how to pick a lock and keeps a small set of lockpicks with him in his bag. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix abilities">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Temperature <span>It's cold out?</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/e35957e45ff6c2413c1b8c1240c79d84/tumblr_inline_n4z93gRrn41s1k3j7.jpg"/></center>
+                        <div class="ayo">Hot and cold don’t bother Ace due to his Devil Fruit. The inner heat from his fire keeps him warm when it’s cold, and the fact that he is heat makes him fairly immune to hot temperatures. Because the heat doesn’t affect him, it’s impossible for him to get a sunburn.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Money <span>Eh, pirates don't need to pay for things</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/013bff483b731de3a767db819a4d9920/tumblr_inline_n4z95mMQsZ1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace tends to not carry much money on him, most of his funds being stored in his room aboard the Moby Dick. What little funds he has on him are kept in a small plain wallet tucked in his shorts. Having grown up in a place where money was rather rare and more precious than usual, he’s learned to guard it carefully and not carry more than a small amount with him.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family childhood">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Sabo's Letter <span>Comfort long gone</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/4b141c358390e6cc84f6a86f55330f22/tumblr_inline_n4z9d8XFaY1s1k3j7.jpg"/></center>
+                        <div class="ayo">Since the day he received it until the day that he challenged Whitebeard and failed, Ace kept Sabo’s letter with him at all time, tucked away in his pocket or safely in the captain’s quarters of his ship. That piece of his brother was always with him. When that fate changing battle occurred that brought him aboard the Moby Dick, he’d left it in the captain’s quarters and was unable to retrieve it. He hasn’t seen it since.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix abilities misc childhood">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">It's Not Actually Murder <span>It's nature's fault</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/6c90e390a3216c4dce051bdfc8078e7f/tumblr_inline_n4z9lf35l11s1k3j7.jpg"/></center>
+                        <div class="ayo">Killing people is something Ace doesn't tend to think about. He fights, he wins, and people are left bloody and/or unconcious. If they die he never knows and never cares. When it comes to actual intent, he prefers to beat them and let nature take care of the rest. He never sees them again? Great, work done. Doesn't matter if they're laying broken at the bottom of a ravine or drowned by the ocean.<br><br>
+Killing people up close and personal is a whole other thing. He's never fought someone with the intent to directly kill, and when put to a situation that counts as blatant straight-up murder, he becomes unnerved.<br><br>
 
-<!--Start entry-->
-<div id="entry" class="story tag1 tag2 tag3">
-<!--You can insert image here-->
-<img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120"><img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120">
-<h1>Muse ⇢ Muse</h1>
-<div class="tdivider"></div>
-<div class="info">
-	<p>
-	<i>Book:</i> 1<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 2<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 3<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 4<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 5<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 6<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 7<br>
-	<b>Attraction?</b> Text<br>
-	<b>Relationship:</b> Text<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-<div class="etags">
-<b> label </b> <br>
-#tag, #tag, #tag
-</div>
-</div>
-<!--End info-->
-</div>
-<!--End entry-->
+When he went to kill Whitebeard it was his goal, and he needed to kill him to feel any sort of okay with himself. It was to confirm that he was his own person and not just Roger’s son.<br><br>
 
-<!--Start entry-->
-<div id="entry" class="story tag1 tag2 tag3">
-<!--You can insert image here-->
-<img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120"><img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120">
-<h1>Muse ⇢ Book 1</h1>
-<div class="tdivider"></div>
-<div class="info">
-	<p>
-	<i>Pre-Books</i><br>
-	<i>Initial Opinions/Prejudices About Khari and Kalel</i><br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 1<br>
-	<i>Event:</i> Khari/Kalel Hogwarts Arrival<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Book:</i> 1<br>
-	<i>Event:</i> End of Term<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-<div class="etags">
-<b> label </b> <br>
-#tag, #tag, #tag
-</div>
-</div>
-<!--End info-->
-</div>
-<!--End entry-->
+It was a way to set him apart from what he desperately needed to, which was why the longer he didn’t kill Whitebeard the more lost he seemed to become, until finally he was left a purposeless husk on the ship around the time he had that talk with Marco.<br><br>
 
-<!--Start entry-->
-<div id="entry" class="story tag1 tag2 tag3">
-<!--You can insert image here-->
-<img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120"><img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120">
-<h1>Muse ⇢ Book 2</h1>
-<div class="tdivider"></div>
-<div class="info">
-	<p>
-	<i>Event:</i> Pet gets attacked, Chamber opens<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Ghost and student get attacked<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Student with a camera gets attacked<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Arian and a student get attacked<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Felix gets taken into the Chamber, school set to close<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> End of Year<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-<div class="etags">
-<b> label </b> <br>
-#tag, #tag, #tag
-</div>
-</div>
-<!--End info-->
-</div>
-<!--End entry-->
-	
-<!--Start entry-->
-<div id="entry" class="story tag1 tag2 tag3">
-<!--You can insert image here-->
-<img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120"><img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120">
-<h1>Muse ⇢ Book 3</h1>
-<div class="tdivider"></div>
-<div class="info">
-	<p>
-	<i>Event:</i> Lavar Cox escapes Azkaban<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Gryffindor portrait gets attacked<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Faine gets attacked<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> End of Year<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-<div class="etags">
-<b> label </b> <br>
-#tag, #tag, #tag
-</div>
-</div>
-<!--End info-->
-</div>
-<!--End entry-->
-	
-<!--Start entry-->
-<div id="entry" class="story tag1 tag2 tag3">
-<!--You can insert image here-->
-<img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120"><img src="https://i.imgur.com/HyPkQ1K.png" width="120" height="120">
-<h1>Muse ⇢ Book 4</h1>
-<div class="tdivider"></div>
-<div class="info">
-	<p>
-	<i>Event:</i> Quidditch World Cup<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Triwizard Tournament<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Beauxbatons<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Durmstrang<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Rachelle as Champion<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Darri as Champion<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Ty as Champion<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Khari as Champion<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> First Task<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Yule Ball<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Second Task<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> Third Task<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-	<p>
-	<i>Event:</i> End of Year<br>
-	<b>Opinion:</b> Text<br>
-	</p>
-<div class="etags">
-<b> label </b> <br>
-#tag, #tag, #tag
-</div>
-</div>
-<!--End info-->
-</div>
-<!--End entry-->
-	
-	
+It wasn’t like he was trying to kill the crew while he was there. And honestly, if he had no qualms about killing he would have just tried to off them all. They followed a man he hated, after all. Might as well get rid of them. But he didn’t. He didn’t even try.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Narcolepsy <span>Not quite so random</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/8cc1172ed44958b1277ec0e51a5ddbaf/tumblr_inline_n4z9plza7x1s1k3j7.jpg"/></center>
+                        <div class="ayo">There’s a much larger chance for Ace’s narcolepsy to kick in while he’s eating or has just finished eating, the condition kicking in fairly rarely otherwise. This was why such attacks only happened few and far between when he was a child: the amount of food he consumed was much smaller than the amount he eats now. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix abilities misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Perspiration <span>Sweat's for other people</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/c6441092fc4bfed577d66d262d951b9d/tumblr_inline_n4z9vxOBWZ1s1k3j7.jpg"/></center>
+                        <div class="ayo">The need for a human to perspire comes form the need to cool down a body. Ace’s body is naturally a fire storm, so no matter what he does he never has a need to cool off. Thus he doesn’t sweat.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Appearance <span>Looks are for the person who has them</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/6caac8c8f362822c43f74647988100ce/tumblr_inline_n4z9s5VoET1s1k3j7.jpg"/></center>
+                        <div class="ayo">The only things that matter to Ace about his appearance are his two tattoos, the one depicting his name entwined with the mark of his brother and the Jolly Roger of his beloved father. The latter of these is the sole reason the young man refuses to wear a shirt, not wanting to cover up his pride as a pirate and a son. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Lonely and the Search for Teach <span>Tough decisions</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/cd6959c4e3b29fa0520adf34d87a12d8/tumblr_inline_n4z9ybSByl1s1k3j7.jpg"/></center>
+                        <div class="ayo">Those months that Ace spent searching for Teach, were not spent in just his angry revenge state. Every night when he stopped to rest, thoughts of his brothers and home would fill his head, leaving him aching for the family he’d come to love. Each night the feeling got worse, starting on the first night with a small twinge of longing and finally getting to the point where he has trouble sleeping because of it. But still he couldn’t turn back, not without taking down someone who had spat in his father’s face so openly.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Red-Haired Yonko <span>Mixed feelings</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/bf9d4a2cf6b092f47ffbf8b18eb2bddf/tumblr_inline_n4za5p01Y21s1k3j7.jpg"/></center>
+                        <div class="ayo">For the longest time, Ace was extremely jealous of Shanks because of how much Luffy idolizes the man. When he was a child, Ace tended to be very possessive of Luffy’s attention. Since growing up and meeting Shanks, this has died down a great deal and he’s found that he likes the man. But the jealousy still sits uncomfortably in the back of his mind. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix people">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Makino the Bartender <span>Debts owed</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/021b8e7aef352d8ba63b332a6319a083/tumblr_inline_n4zac1yHJf1s1k3j7.jpg"/></center>
+                        <div class="ayo">When Ace was younger, he had something of a crush on the cute bartender of Foosha Village. This was mainly around the time he was ten to thirteen, though, and the older he got the more he grew out of the childish feelings. He views her more as family than anything else now, as she was one of the two women who spent a lot of time raising him and Luffy.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Vengeance <span>Marshal D. Teach will pay</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/0ac33336e8d30535802d87d2b9d0fbd3/tumblr_inline_n4zaebFe9i1s1k3j7.jpg"/></center>
+                        <div class="ayo">The reason Ace flew off the handle so badly when Teach killed Thatch was due to several reasons. First: Teach had been under his command in his division, and thus the betrayal was far more personal than if he’d been in someone else’s. Second: Over the few years Ace had spent on the Moby Dick, Thatch was one of the people he’d grown closest to, right alongside Marco and Whitebeard. The death of someone so special to him flared his temper instantly.<br><br>
+Third: Losing Thatch reminded him painfully of when he’d lost Sabo. That particular death he’d been able to do nothing about and was barred from exacting his vengeance on his brother’s murderer. He wouldn’t allow such a thing to happen a second time. This time, the murderer would pay. Even if it cost him his own life. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Moby Dick Habits <span>Home sweet home</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/bb879af41b58701a5e0210088b2fcb7c/tumblr_inline_n4zahnq1Ng1s1k3j7.jpg"/></center>
+                        <div class="ayo">While aboard the Moby Dick, Ace likes to remain on the deck whenever possible. He likes the fresh air and the smell of the sea, and he occasionally is found looking out at the waves. This is something he tended to avoid whenever Marco or Thatch were around (when Thatch was still around. Since the incident, he hasn’t been back to the ship much, and only for short bursts when he does return), as they took pretty much any opportunity to tease him.<br><br>
 
-</div> <!------------------------------------------------End container------------------------------------------------->
+He likes to stay in motion as well, so he’s often moving about the deck and pestering everyone with his movement. When Marco’s around, he has a habit of scaling the masts in obviously dangerous fashions in an attempt to make Marco shift into his phoenix form, as he very much likes to see it.<br><br>
+
+Taking watch in the middle of the night is also something he enjoys doing, but he likes to try and force one of his brothers or sisters (mainly Marco and Thatch) to stay up with him. Mainly because he tends to fall asleep at some point either from his Narcolepsy or from simply the hour and how much he’d been moving that day. But also because he simply enjoys their company.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Moby Dick Fights <span>Conflict dwindles</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/c63c166542724d488035a268034606c4/tumblr_inline_n4zajqblt41s1k3j7.jpg"/></center>
+                        <div class="ayo">Fighting with Marco was kind of a daily -or nightly- thing back before Ace left the ship. It didn’t take much for him to goad Marco into a fight or vice versa, a part of the day that Ace enjoyed a great deal even though he never really won. As they fought, Thatch would sit off to the side, just waiting for one -or both- to go flying over the rail and into the sea for him to dive in after.<br><br>
+Since Thatch’s death, however, Ace has found fighting with Marco at night is not as fun as it used to be, as he’s almost died several times because of it. Now he avoids it unless there are other people around that can help when things go wrong. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Blood <span>A secret best kept that way</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/695c7611165e18a4472b20748edd15bc/tumblr_inline_n4zaniVnex1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace finds it hard to believe that so many people could accept him and call him their brother, seeing as everyone in the crew (a total at more than a thousand people) does. Still, there’s a worry in the back of his mind on what would happen should they all find out about his blood. He fears that he will be completely rejected should they all somehow learn of it.  The only ones in his new family who know are Whitebeard and Marco, as he felt it was important to tell the two in charge of running the ship.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix love">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Love <span>Can't love what you don't trust</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/0f471a8330c2aa20b0d8dca4cbb2cbbc/tumblr_inline_n4zbrgXsMl1s1k3j7.jpg"/></center>
+                        <div class="ayo">Love requires trust, and trust isn’t something Ace gives very easily. Even with how he gives trust to his nakama, it’s not nearly enough for him to let them close enough for love. The depths of his heart is something he guards with wary walls, not daring to let anyone too close for fear of what they’ll think of the true him. Those that can get past these walls can be considered nothing short of the most important people to him, for these are the people he comes to love the most whether it’s romantically or otherwise. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix family">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Family <span>Don't touch them</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/46bd81900d778431939e79fc6bd7278c/tumblr_inline_n4zaqiA1U31s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace guards his family with a fierce sort of loyalty that only they can evoke from him, be it Luffy or his brothers aboard the Moby Dick and other vessels. When he was younger he hadn’t liked the idea of family, the thoughts bringing only a mixture of emotions as his mother and father came to mind. However, his opinion revised upon making his promise to Luffy and Sabo, and now his family is very important to him. Roger has been disregarded from this category completely in favor of his ‘true father’, or Whitebeard, who Ace accepts without hesitation because the same was done for him by the old man.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Friendship <span>Not as close as they look</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/a97411d95c6bc91650e7700e190bc2fe/tumblr_inline_n4zayg3U0r1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace makes friends with a wide variety of people, though most of them tend to be associated with Whitebeard in some way as other people either get intimidated or violent at the sight of his mark. He makes acquaintances more often than actual friends, finding it hard to get to close to people easily.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix childhood">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Childhood Hatred <span>A heart frozen and thawed</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/dbd8ba623666214aa9c25ffa5ea69c12/tumblr_inline_n4zb0g3QTP1s1k3j7.jpg"/></center>
+                        <div class="ayo">Few people were close to Ace and he prefered to keep it that way, choosing to instead stick to those he knew he could trust. Others would scorn him if they knew, he learned that well enough with all the bars and hypothetical questions. No, they didn't really want him around. They never would, not with the desire for him dead hidden not-so deep in their hearts.<br><br>
+
+He couldn't get close to people because he's a monster.<br><br>
+
+And it made him <i>hate.</i></div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Old Age <span>Just living through today is enough</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/54ce84b2dd4a3cce97604bdb88cd61d9/tumblr_inline_n4zb63zMJK1s1k3j7.jpg"/></center>
+                        <div class="ayo">Ace is fully aware that he will never make it to an old age. Not only is he a pirate, but he’s a commander in the crew of a Yonko and the son of one of the most hated men to roam the world. Luck is not something he was born with and wasn’t something he expects, and he knows that it will run out more sooner than later. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix childhood misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Education <span>I learned things?</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/be75db8de82645069e07713394467183/tumblr_inline_n4zb6xYwHS1s1k3j7.bmp"/></center>
+                        <div class="ayo">Ace never received a formal education or much of any education at all, really. All he learned was from what he experienced, as he simply refused to learn anything from the bandits he grew up with. Sabo was the one who taught him how to read and write, though the process took quite a while considering Ace would continually get frustrated and storm off without finishing a lesson. When the time came for Luffy to learn, Ace taught him in place of their missing brother. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix childhood">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Sabo's Death <span>Pain hidden away</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/28c04cd3d918c670549461e5f73677df/tumblr_inline_n4zbanWOCn1s1k3j7.jpg"/></center>
+                        <div class="ayo">The years following Sabo’s death were spent with Ace sitting on that cliff face where him and his brothers had made their promise, looking out at the ocean in hopes that he would see his lost brother returning to him. He’d always known it was a vain hope. Sabo was dead and Ace would never seen his crooked smile again.<br><br>
+
+But still he hope, wishing that it wasn’t really the end and that something unexpected had whisked his brother away from that place of death. For the longest time, Sabo had been the one who made Ace truly feel like he belonged, even if that feeling had been shaky at best. So how could someone so special, so important, die just like that?<br>
+
+Up until the day he left Dawn Island, Ace spent at least a few minutes everyday looking out at the sea. Most of the time this was while Luffy was sleeping, so the younger boy wouldn’t see how truly sad he was. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix misc">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Death <span>Live life how you want</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/e78e1ff0e63be12859a2b76e68dbeeef/tumblr_inline_n4zbgjiaVA1s1k3j7.jpg"/></center>
+                        <div class="ayo">Death means something different to Ace depending on who it’s about. If it regards other people, particularly those he cares for, he will do whatever he needs to keep death away from his loved ones.<br><br>
+
+Death to Ace, however, is certain.<br><br>
+
+<i>""I don’t want to live forever. If I just live through today, that’ll be enough."</i><br><br>
+
+He realizes that death is inevitable, especially for someone like him. It comes to everyone and to people who live a dangerous lifestyle especially. Pirates especially have a high mortality rate and he won’t bother denying it.<br><br>
+
+People would hate him if they knew and because of his blood, they would kill him. This just adds to his belief that he will die young, though he doesn’t bother to dwell on it. If it happens it happens.<br><br>
+
+So he makes the most of everyday, living life with no regrets.<br><br>
+
+In regards to how he believes he will die:<br><br>
+
+Ace knows he’s fiercely loyal and incredibly protective for those close to him. If anything takes him down, it will be in one of those moments when he can’t turn his back and he can’t run, because there’s someone or something precious behind him.<br><br>
+
+Of course, he knows it could happen any time or with any circumstance. Ace just believes that the highest probability lies with raging emotions. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix sexual">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Dominance <span>Not one to sit and take it</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/1ece5a732401451abc048bc6a7084a2c/tumblr_inline_n4zblaFy8t1s1k3j7.jpg"/></center>
+                        <div class="ayo">When it comes to sex, Ace tends to be an incredibly dominant person. He takes control confidently and thoroughly enjoys the pleasure of the person under him, enjoying knowing that he’s the one doing it to them. It makes him feel like, even if it’s just for a short while, someone is glad that he’s in the world. </div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix sexual">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Firesex <span>Connected in every way</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/ab1e7d7ded536fa3f65cef223b2b419a/tumblr_inline_n4zbkhDSqj1s7ssqp.jpg"/></center>
+                        <div class="ayo">Both Ace and Marco are drawn to each other’s fire in a rather sensual way. The phoenix desires to be close to that which it requires: intense natural fire. The flame desires to be close to that which loves and stokes its need to burn: the phoenix.<br><br>
+
+It’s not uncommon for sparring between them to wind up with them in bed, as both consider their entwining flames to be a sort of foreplay that only they can feel. And it’s also not that uncommon for fire to be used during the actual sex, since neither of them can be harmed by the heat and it only serves to draw them closer together.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+<!----whole fic box starts here--->
+<div class="mix sexual">
+ 
+        <a href="http://archiveofourown.org/">
+                <div class="title">Intimacy <span>Not for everyone</span></div>
+        </a>
+ 
+        <div class="info">
+       <center><img src="https://31.media.tumblr.com/0cf774e19366f9b897c07d18ac828b2d/tumblr_inline_n4zbsqtlLb1s1k3j7.jpg"/></center>
+                        <div class="ayo">As most of the time he's uninterested in everyone in both a romantic and a sexual way, Ace is not one to sleep with just anyone. It takes someone he cares for deeply for such things to even cross his mind, and if he manages to catch that elusive person who holds his love then absolutely nothing is held back.</div>
+                       
+        </div> <!---info box end---->
+</div> <!----mix end---->
+<!----whole fic box ends here---->
+
+
+
+
+
+
+
+
+
+ 
+ 
+</div> <!-container end->
+<br><br>
+</div> <!--right end-->
+</div> <!--contain end-->
+ 
+ <!--stuff for the categorising - dont fiddle with this-->
+                <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+                <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+                <script>
+                // On document ready:
+ 
+        $(function(){
+ 
+                // Instantiate MixItUp:
+ 
+                $('#Container').mixItUp();
+ 
+                });
+                </script>
 </body>
-
-<!-- Filter scripts -->
- 
-<script src="https://static.tumblr.com/fuu6t9w/kh8ml0pl9/jquery-1.7.1.min.js"></script>
-<script src="https://static.tumblr.com/fuu6t9w/eubml0pm0/jquery.isotope.min.js"></script>
- 
-<script>
-$(function(){
-var $container = $('#container');
- 
-$container.isotope({
-itemSelector : '.story'
-});
- 
-var $optionSets = $('#sorting .option-set'),
-$optionLinks = $optionSets.find('a');
- 
-$optionLinks.click(function(){
-var $this = $(this);
-// don't proceed if already selected
-if ( $this.hasClass('selected') ) {
-return false;
-}
-
-var $optionSet = $this.parents('.option-set');
-$optionSet.find('.selected').removeClass('selected');
-$this.addClass('selected');
- 
-// make option object dynamically, i.e. { filter: '.my-filter-class' }
-var options = {},
-key = $optionSet.attr('data-option-key'),
-value = $this.attr('data-option-filter');
-// parse 'false' as false boolean
-value = value === 'false' ? false : value;
-options[ key ] = value;
-if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-// changes in layout modes need extra logic
-changeLayoutMode( $this, options )
-} else {
-// otherwise, apply new options
-$container.isotope( options );
-}
- 
-return false;
-});
- 
-});
-</script>
- 
-<!-- Hide/show on click -->
- 
-<script>
-$(document).ready(function(){
-
-$("#titleone").click(function(){
-$("#linkboxone").slideToggle(300);
-});
- 
-$("#titletwo").click(function(){
-$("#linkboxtwo").slideToggle(300);
-});
- 
-$("#titlethree").click(function(){
-$("#linkboxthree").slideToggle(300);
- });
- 
-});
-</script>
-
 </html>
-<!-- END HTML -->
