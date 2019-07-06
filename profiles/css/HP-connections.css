@@ -331,10 +331,11 @@ margin:15px;
  
 #entry{
 width:250px;
-height:auto;
+height:500px;
 font-size:12px;
 background:#fff;
 border:1px solid #eee;
+ overflow:scroll;
 }
 
 /* Titles */
