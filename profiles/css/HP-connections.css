@@ -321,9 +321,6 @@ z-index:10;
 .story{
 width:230px;
 margin:15px;
--moz-transition-duration:1s;
--webkit-transition-duration:1s;
--o-transition-duration:1s;  
 }
  
 /* Entries */
