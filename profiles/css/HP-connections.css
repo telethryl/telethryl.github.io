@@ -319,7 +319,7 @@ z-index:10;
 /* Entries */
 
 .story{
-width:320px;
+width:220px;
 margin:15px;
 -moz-transition-duration:1s;
 -webkit-transition-duration:1s;
@@ -329,7 +329,7 @@ margin:15px;
 /* Entries */
  
 #entry{
-width:340px;
+width:240px;
 height:340px;
 font-size:12px;
 background:#fff;
