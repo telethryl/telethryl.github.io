@@ -1,382 +1,347 @@
-<!DOCTYPE html>
-               
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Page 09
+ 
+{. Over the Garden Wall + Charcter Page .}
+ 
+Page #09. (Over the Garden Wall)
+http://noiretblanc-themes.tumblr.com/
+ 
+Please don't use this theme as a base or claim it as your own.
+You are free to edit this page as much as you want, please just don't erase the credits.
+ 
+CREDITS TO:
+    All images and info were collected from Over the Garden Wall wiki
+        http://over-the-garden-wall.wikia.com/wiki/Over_the_Garden_Wall_Wiki
+   
+    Anchor code: http://codepedia.info/anchor-hover-effect-jquery-plugin/
+ 
+-->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<meta name="robots" content="nofollow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="{Favicon}">    
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="https://static.tumblr.com/g703xso/dW2ovrvkl/anchor.js"></script>        
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Josefin+Sans" rel="stylesheet">    
+  <meta name="robots" content="nofollow" />
  
-<!--hello dear tumblr user
-        i hope you will find this page code useful
-        this is coded from scratch (except the jquery and javascript) so
-        please do not:
-                > redistribute
-                > claim as own
-                > use as base code
-                > remove credit
-                > remove this [you can remove my other commentaries though]
-        you can, however customise it to your liking
-        otherwise i will find you, and then i will skin you.
-       
-        thanks to kunkalabs.com for the perfect mixitup jquery plugin
-         > https://mixitup.kunkalabs.com/
-         
-        any questions and problems, please let me know so i could fix it myself
-       
-        the contents are fluid so it should look fine on any screen resolution
-        but best viewed in google chrome!!
-        but youre a tumblr user so obviously youre using chrome
-       
-        enjoy the page, butterfly :3
-                - mara (noshtholmes.tumblr.com)-->
+    <title>{Title}</title>
  
-<title>{title}</title>
- 
- <link rel="shortcut icon" href="{Favicon}">
- 
-<!--borrowed a font from google lmao-->
- 
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,400' rel='stylesheet' type='text/css'>
- 
-<style type="text/css">
- 
-/* some basic css bullshit */
- 
-body {
-        background: #000;
-        font-family: Roboto Condensed, calibri;
-        font-size: 11px;
-        color: #6d0000;
-}
- 
-* {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-}
- 
-/* dividers */
- 
-#contain {
-        width: 100%;
-        margin: 0 auto;
-        height: auto;
-}
- 
-#sidebar {
-        display: table;
-        padding: 20px;
-        height: 100%;
-        width: 300px;
+<style>
+    /* YOU MAY EDIT THE COLORS TO MATCH YOUR THEME. BUT PLEASE DO NOT REMOVE THE CREDITS */
+    #credit{
         position: fixed;
-        float: left;
-        background: url('') fixed;
-        border-right: 10px solid #000;
-        color: #eee;
+        bottom: 0;
+        right: 0;
+    }
+   
+    #credit a{
+        text-decoration: none;
+        display: block;
+        background: #000000;
         text-align: center;
-}
+        color: white;
+        padding: 5px 15px 3px 20px;
+        -moz-transition:all .4s ease-in-out;
+        -webkit-transition:all .4s ease-in-out;
+        -o-transition:all .4s ease-in-out;
+         transition:all .4s ease-in-out;
+    }
+   
+    #credit a:hover{
+        letter-spacing: 3px;
+    }
+   
+    /*MAIN SCROLL BAR*/
+   
+    Body::-webkit-scrollbar-track
+    {
+        background: #7b7360;
+    }
  
-#right {
-        position: relative;
-        margin-left: 320px;
-        height: auto;
-        width: auto;
-}
+    Body::-webkit-scrollbar
+    {
+        width: 10px;
+    }
  
-#valign {
-        display: table-cell;
-        vertical-align: middle;
-}
+    Body::-webkit-scrollbar-thumb
+    {
+        background-color: #0b0b0b;
+    }
+   
+    /*BOX SCROLLBAR*/
+   
+    ::-webkit-scrollbar-track
+    {
+        background: rgba(0, 0, 0, 0.28);
+    }
  
-/* links which is irrelevant */
+    ::-webkit-scrollbar
+    {
+        width: 3px;
+    }
+ 
+    ::-webkit-scrollbar-thumb
+    {
+        background-color: #b49870;
+    }
+ 
+ 
+    body{
+        background: url("https://i.imgur.com/ArZmQaB.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /*If you want a bakcground that repeats. Erase the previous code and leave this one:
        
-a, a:link, a:active, a:hover {
-        text-decoration: none;
-        color: #3d3d3d;
-}
- 
-/* stuff in the sidebar */
- 
-h1 {
-        font-family: roboto condensed;
-        font-size: 90px;
-        color: #fff;
-        line-height: 70px;
-        text-align: left;
-        text-transform: uppercase;
-        margin: 0 0 10px 0;
+        background: url("");
+       
+        */        
+        margin:0;
+        padding:0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:12px;
+    }    
+   
+    .header{
+        position: fixed;
+        background: #0b0b0b; /*Header background color*/
+        width: 100%;        
+        height: 120px;      
+        z-index: 100;        
+        text-align: center;
+    }
+   
+    .header h1{
+        color: #dbd0ad; /*Header Title color*/
+        font-family: 'Cinzel Decorative', cursive;
+        padding-top: 25px;
+        margin: 0;
+        -moz-transition:all .5s ease-in-out;
+        -webkit-transition:all .5s ease-in-out;
+        -o-transition:all .5s ease-in-out;
+         transition:all .5s ease-in-out;
+    }
+   
+    .header h1:hover{
+        letter-spacing: 2px;
+    }
+   
+    .links{
         padding: 0;
-        text-shadow: 2px -1px 0px rgba(221, 221, 221, 1);
-}
- 
-h1:first-letter {
-        color: #e04107;
-        text-shadow: 2px -1px 0px rgba(255, 255, 255, 1);
-}
- 
-/* description style in the sidebar */
- 
-.hdesc {
-        color: #fff;
-        width: 100%;
-        text-align: center;
-        font-size: 10px;
-        margin: 0 0 10px 0;
-}
- 
-/* nav or category links */
- 
-a.bblog, button {
-        display: block;
-        padding: 5px;
-        margin: 2px 0px;
-        background: #5a5a5a;
-        color: #bd0303;
-        width: 100%;
-        text-transform: lowercase;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        opacity: 0.7;
-        font-family: calibri, 'Helvetica Neue', arial, sans-serif;
-        border: 0;
-        text-align: center;
-}
- 
-a.bblog:hover, button:hover {
-        background: #ddd;
-        color: #333;
-        -moz-transition-duration:.90s;
-        -webkit-transition-duration:.90s;
-        -o-transition-duration:.90s;
-}
- 
-button:focus {
-        outline: 0 none;
-}
- 
-/* button:active and button.active arent the same */
- 
-button:active {
-        background: #eee;
-}
- 
-button.active {
-        background: transparent;
-        color: #e04107;
-}
- 
-/* DO NOT change these, it will confuse the javascript,
-        just the styles */
- 
-.container {
-        padding: 0px;
-        font-size: 0.1px;
-        -webkit-backface-visibility: hidden;
-}
- 
-.container .mix,
-.container .gap {
+        margin: 0;
+        margin-top:20px;
+    }
+   
+    .header a{ text-decoration:none;}  
+       
+    .header ul a{
         display: inline-block;
-}
- 
-/* this is the fic box */
- 
-.container .mix {
-        text-align: left;
-        border: 0;
-        width: 300px;
-        background: #333333;
-        border-bottom: 10px solid #b61c02;
-        height: 250px;
-        overflow: hidden;
-        margin: 10px 5px 0px 5px;
-        padding: 0px;
-        display: none;
-}
- 
-/* title of the fic */
- 
-.title {
-        width: 100%;
-        background: #b61c02;
-        color: #fff;
-        padding: 5px 0px 5px 10px;
-        height: auto;
-        font-family: Roboto Condensed;
-        font-size: 14px;
-        text-align: left;
-        text-decoration: none;
-        font-weight: bold;
-        letter-spacing: -1px;
-        text-transform: uppercase;
-}
- 
-/* author of the fic */
- 
-.title span {
-        display: block;
-        font-size: 10px;
-        padding-left: 10px;
-        font-style: italic;
-        font-weight: 300;
-        color: #fff;
         letter-spacing: 1px;
-}
+        text-decoration: none;
+    }
  
-/* pardon these funky identifiers i couldnt think of anything
-        anyway, this is the rating: or information: or summary: bullshit header */
- 
-div.heady {
-        font-size: 11px;
-        text-transform: uppercase;
-        color: #1a1a1a;
-        padding: 5px;
-}
- 
-/* this is the text that comes after the bullshit header above */
- 
-div.ayo {
-        font-size: 11px;
-        color: #a5a5a5;
-        font-style: italic;
-        font-family: calibri;
-        padding: 0px 0px 0px 15px;
-}
- 
-.ayo:before {
-        content: "» ";
-}
- 
-/* nevermind this
-        this controls the overflow of the box */
- 
-.info {
-        float: left;
-        width: auto;
-        height: 200px;
-        margin: 0px;
-        padding: 3px 10px 10px 5px;
-        overflow: auto;
-        text-align: left;
-}
- 
-div.info::-webkit-scrollbar {width: 3px;}
-div.info::-webkit-scrollbar-track {background: transparent; border: 0;}
-div.info::-webkit-scrollbar-thumb {background: #bd0303;}
- 
-/* my nice lil credit */
- 
-a.credit, a.credit:link, a.credit:active {
+    .header li {
         display: inline-block;
-        font-family: cambria;
-        background: #fff;
-        color: #a1a1a1;
-        width: auto;
-        font-size: 10px;
-        font-style: italic;
-        margin: 20px 0 0 0;
-        padding: 5px;
-        opacity: 0.6;
-}
+        list-style: none;
+        padding: 10px;
+    }
  
-a.credit:hover {
-        color: #fff;
-        background: #a1a1a1;
-        -moz-transition-duration:.70s;
-        -webkit-transition-duration:.70s;
-        -o-transition-duration:.70s;
-}
+    .brackets a {
+        color: #ffffff; /*Links colors*/
+    }
+   
+    .brackets a::before,
+    .brackets a::after {
+        display: inline-block;
+        opacity: 0;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+        -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+        transition: transform 0.3s, opacity 0.2s;
+    }
+    .brackets a::before {
+        margin-right: 10px;
+        content: '[';
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    .brackets a::after {
+        margin-left: 10px;
+        content: ']';
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        transform: translateX(-20px);
+    }
+    .brackets a:hover::before,
+    .brackets a:hover::after,
+    .brackets a:focus::before,
+    .brackets a:focus::after {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        transform: translateX(0px);
+        color: #dbd0ad; /*Brackets color on hover*/
+    }
+   
+    .main{
+        position: absolute;
+        width:100%;
+        top: 150px;
+        text-align: center;
+    }
+   
+    .boxme{
+        display: inline-block;
+        position: relative;
+        width: 320px;
+        height: 320px;
+        overflow: hidden;
+        margin: 5px;
+        margin-bottom: 10px;
+    }
+   
+    .portrait{
+        position: absolute;
+        top:15px;
+        left:15px;
+        z-index: 1;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        border: 10px solid #80725e; /*Border color in the character picture*/
+        -webkit-box-shadow: 10px 10px 13px -7px rgba(0,0,0,0.29);
+        -moz-box-shadow: 10px 10px 13px -7px rgba(0,0,0,0.29);
+        box-shadow: 10px 10px 13px -7px rgba(0,0,0,0.29);
+        -ms-transform: rotate(-15deg); /* IE 9 */
+        -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+        transform: rotate(-15deg);
+    }
+   
+    .portrait img{
+        max-height: 100px;
+    }
+   
+    .info{
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background: rgba(106, 96, 85, 0.65); /*Background color in the info box*/
+        bottom: 0;
+        right: 0;
+        overflow: auto;
+        color: #decdac; /*Font color in the info boxr*/
+    }
+   
+    .basics{
+        display: block;
+        margin-left: 75px;
+        height: 70px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+   
+    .basics b{
+        display: block;
+        font-size: 22px;
+    }
+   
+    .basics i{
+        display: block;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+   
+    .extra{
+        padding: 15px 10px;
+        text-align: justify;
+    }
+   
+    .extra p{
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+    }
+   
+    .extra li{
+        font-size: 12px;
+        list-style: none;
+        display: block;        
+        margin: 5px 0;
+        padding-left: 5px;
+        border-left: 10px solid #dbb97a; /*First trait color*/
+    }
+   
+     .extra li:nth-child(2) {
+        border-left: 10px solid #a58131; /*Second trait color*/
+    }
+ 
+    .extra li:nth-child(3) {
+        border-left: 10px solid #6a461d; /*Third trait color*/
+    }
+       
+    /* If you make a larger list of traits in the character, you'll need to copy this code and change the number for every new line.
+   
+    .extra li:nth-child(4) {
+        border-left: 10px solid #000000;
+    }
+   
+    */    
  
 </style>
- 
+</head>
 <body>
-<div id="contain">
- 
-<div id="sidebar">
- 
-        <div id="valign"> <!--vertically centers sidebar content in case youre wondering-->
- 
-<h1>HP</h1>
- 
-  <div class="hdesc">Description here. Or not, that's cool too. I've got instructions and tips on how to use this page on my post in my blog. Yeah, jquery's cool isn't it? It's been awhile.</div>
- 
-  <!--the link back to ur blog-->
-        <a class="bblog" href="/">Home</a>
+   
+    <div class="header">
+        <!-- TITLE -->
+        <h1>Over the Garden Wall</h1>
        
-  <!--categories-->
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter=".childhood">Childhood</button>
-        <button class="filter" data-filter=".family">Family</button>
-        <button class="filter" data-filter=".love">Love</button>
-        <button class="filter" data-filter=".sexual">Sexual</button>
-        <button class="filter" data-filter=".abilities">Abilities</button>
-        <button class="filter" data-filter=".people">People</button>
-        <button class="filter" data-filter=".misc">Misc</button>
+        <!-- LINKS. You my add/remove as you wish. -->
+        <ul class="links">
+             <li><a href="/">Back</a></li>
+             <li><a href="/">Link 1</a></li>
+             <li><a href="/">Link 2</a></li>
+             <li><a href="/">Link 3</a></li>
+             <li><a href="/">Link 4</a></li>
+        </ul>    
+    </div>
+   
+    <div class="main">
+       
+        <!-- COPY TO CREATE A NEW CHARACTER -->
+        <div class="boxme">
+            <!-- Character Image-->
+            <div class="portrait"><img src="https://i.imgur.com/iHPPfeO.png"></div>            
+            <!-- Character Info-->
+            <div class="info">
+                <div class="basics">
+                    <b>The Beast</b> <!-- NAME -->
+                    <i>"Are you ready to see true darkness?"</i><!-- FREE TEXT OF YOUR CHOICE-->                                    
+                </div>
+               
+                <div class="extra">
+                   
+                    <!-- TRAITS. EDIT AS YOU WILL.
+                    YOU CAN ADD MORE AND CHANGE THE COLORS IN THE LAST LINES OF THE CSS.-->
+                    <li>Antagonist</li>
+                    <li>???</li>
+                    <li>Mysterious info</li>
+                   
+                    <!-- FREE TEXT -->                    
+                    <p>The main antagonist of Over the Garden Wall. He is the monster of the The Unknown, and is feared throughout it. His goal is to catch the brothers, Wirt and Gregory, and turn them into Edelwood trees in order to fuel his lantern.</p>
+                </div>            
+            </div>            
+        </div>
+        <!-- END OF NEW CHARACTER -->              
+    </div>
+   
+    <div id="credit"><a href="http://noiretblanc-themes.tumblr.com/">Theme</a></div>
  
- 
-<!-- CREDIT PLS DO NOT REMOVE i mean its already small enough-->
-        <a class="credit" href="http://noshtholmes.tumblr.com">NSH</a>
- 
-        </div> <!--valign end-->
-</div> <!--sidebar end-->
- 
-<div id="right">
- 
-        <div id="Container" class="container">
-        
- 
-<!----whole fic box starts here--->
-<div class="mix family people">
- 
-        <a href="http://archiveofourown.org/">
-                <div class="title">Father Dear <span>Burden of Blood</span></div>
-        </a>
- 
-        <div class="info">
-       <center><img src="https://31.media.tumblr.com/5db6f627efa78bf0a7c88d534adf926d/tumblr_inline_n4z6qlT3qe1s1k3j7.jpg"/></center>
-        <div class="ayo">
-        <p>
-            
-        </p>
-        </div> <!---info box end---->
-</div> <!----mix end---->
-<!----whole fic box ends here---->
-
-
-
-
-
-
-
-
-
-
- 
- 
-        </div> <!-container end->
- 
-<br><br>
- 
-</div> <!--right end-->
- 
-</div> <!--contain end-->
- 
- <!--stuff for the categorising - dont fiddle with this-->
-                <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-                <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
-                <script>
-                // On document ready:
- 
-        $(function(){
- 
-                // Instantiate MixItUp:
- 
-                $('#Container').mixItUp();
- 
-                });
-                </script>
- 
-</body>
+<script>
+$(".links a").anchorHoverEffect({type: 'brackets'});
+</script>
+   
+</body>    
 </html>
