@@ -175,7 +175,7 @@ for (var i = 0; i < btns.length; i++) {
         letter-spacing: 2px;
     }
    
-    .links{
+    .myBtnContainer{
         padding: 0;
         margin: 0;
         margin-top:20px;
@@ -232,7 +232,7 @@ for (var i = 0; i < btns.length; i++) {
         color: #dbd0ad; /*Brackets color on hover*/
     }
    
-    .main{
+    .container{
         position: absolute;
         width:100%;
         top: 150px;
@@ -378,47 +378,25 @@ for (var i = 0; i < btns.length; i++) {
 </style>
 </head>
 <body>
-<div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
-  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
-  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
-</div>
 
-<div class="container">
-  <div class="filterDiv cars">BMW</div>
-  <div class="filterDiv colors fruits">Orange</div>
-  <div class="filterDiv cars">Volvo</div>
-  <div class="filterDiv colors">Red</div>
-  <div class="filterDiv cars animals">Mustang</div>
-  <div class="filterDiv colors">Blue</div>
-  <div class="filterDiv animals">Cat</div>
-  <div class="filterDiv animals">Dog</div>
-  <div class="filterDiv fruits">Melon</div>
-  <div class="filterDiv fruits animals">Kiwi</div>
-  <div class="filterDiv fruits">Banana</div>
-  <div class="filterDiv fruits">Lemon</div>
-  <div class="filterDiv animals">Cow</div>
-</div>
-   
     <div class="header">
         <!-- TITLE -->
         <h1>Over the Garden Wall</h1>
        
         <!-- LINKS. You my add/remove as you wish. -->
-        <ul class="links">
-             <li><a href="/">Back</a></li>
-             <li><a href="/">Link 1</a></li>
-             <li><a href="/">Link 2</a></li>
-             <li><a href="/">Link 3</a></li>
-             <li><a href="/">Link 4</a></li>
+        <ul class="myBtnContainer">
+             <li><button class="btn active" onclick="filterSelection('all')"> Show all</button></li>
+             <li><button class="btn" onclick="filterSelection('cars')"> Cars</button></li>
+             <li><button class="btn" onclick="filterSelection('animals')"> Animals</button></li>
+             <li><button class="btn" onclick="filterSelection('fruits')"> Fruits</button></li>
+             <li><button class="btn" onclick="filterSelection('colors')"> Colors</button></li>
         </ul>    
     </div>
    
-    <div class="main">
+    <div class="container">
        
         <!-- COPY TO CREATE A NEW CHARACTER -->
+	<div class="filterDiv cars">
         <div class="boxme">
             <!-- Character Image-->
             <div class="portrait"><img src="https://i.imgur.com/iHPPfeO.png"></div>            
@@ -442,6 +420,7 @@ for (var i = 0; i < btns.length; i++) {
                 </div>            
             </div>            
         </div>
+	</div>
         <!-- END OF NEW CHARACTER -->              
     </div>
    
